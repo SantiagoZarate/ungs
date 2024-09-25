@@ -1,0 +1,41 @@
+---
+import Layout from '../../../layouts/Layout.astro'
+import path from 'node:path'
+import { promises as fs } from 'node:fs'
+import slugify from 'slugify'
+
+export async function getStaticPaths() {
+  let materias: string[] = []
+  const materiasDirectory = path.resolve(`./public/materias`)
+  try {
+    materias = await fs.readdir(materiasDirectory)
+    return materias.map((materia) => ({ params: { materia: materia } }))
+  } catch (error) {
+    throw new Error('There was an error')
+  }
+}
+
+const { materia } = Astro.params
+
+const temasDirectory = path.resolve(`./public/materias/${materia}`)
+
+let temas: string[] = []
+try {
+  temas = await fs.readdir(temasDirectory)
+} catch (error) {
+  throw new Error('There was an error')
+}
+
+const temasUnslugified = temas.map((tema) => tema.replace(/-/g, ' '))
+
+console.log(temasUnslugified)
+---
+
+<Layout title='Materias'>
+  <header>
+    {materia}
+  </header>
+  <ul class='flex flex-col divide-y'>
+    {temasUnslugified.map((c) => <li class='capitalize'>{c}</li>)}
+  </ul>
+</Layout>
