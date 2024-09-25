@@ -1,7 +1,9 @@
 :root {
-  --background: 0 10% 70%;
+  --background: 0 10% 75%;
+  --primary:0 10% 25%;
 }
 
 .dark {
   --background: 0 20% 0%;
+  --primary:0 10% 95%;
 }

@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         background: "hsl(var(--background))",
+        primary: "hsl(var(--primary))",
       },
       fontFamily: {
         geist: ["Geist", "sans-serif"],

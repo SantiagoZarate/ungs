@@ -2,7 +2,6 @@
 import Layout from '../../../layouts/Layout.astro'
 import path from 'node:path'
 import { promises as fs } from 'node:fs'
-import slugify from 'slugify'
 
 export async function getStaticPaths() {
   let materias: string[] = []
@@ -25,10 +24,6 @@ try {
 } catch (error) {
   throw new Error('There was an error')
 }
-
-const temasUnslugified = temas.map((tema) => tema.replace(/-/g, ' '))
-
-console.log(temasUnslugified)
 ---
 
 <Layout title='Materias'>
@@ -36,6 +31,12 @@ console.log(temasUnslugified)
     {materia}
   </header>
   <ul class='flex flex-col divide-y'>
-    {temasUnslugified.map((c) => <li class='capitalize'>{c}</li>)}
+    {
+      temas.map((tema) => (
+        <a href={`/materias/${materia}/${tema}`} class='capitalize'>
+          {tema.replace(/-/g, ' ')}
+        </a>
+      ))
+    }
   </ul>
 </Layout>

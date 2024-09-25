@@ -1,0 +1,45 @@
+---
+import Layout from '../../../../layouts/Layout.astro'
+import path from 'node:path'
+import { promises as fs } from 'node:fs'
+
+export async function getStaticPaths() {
+  const materiasDirectory = path.resolve('./public/materias')
+  let materias: string[] = []
+  try {
+    materias = await fs.readdir(materiasDirectory)
+  } catch (error) {
+    throw new Error('Error reading materias directory')
+  }
+
+  let paths: { params: any }[] = []
+  for (const materia of materias) {
+    const temasDirectory = path.resolve(`./public/materias/${materia}`)
+    let temas: string[] = []
+    try {
+      temas = await fs.readdir(temasDirectory)
+      // Generate paths for each tema
+      paths = paths.concat(
+        temas.map((tema) => ({
+          params: { materia, tema: tema.replace('.md', '') } // Remove .md extension
+        }))
+      )
+    } catch (error) {
+      throw new Error(`Error reading temas for ${materia}`)
+    }
+  }
+
+  return paths
+}
+
+const { materia, tema } = Astro.params
+---
+
+<Layout title={materia + ' - ' + tema!}>
+  <header>
+    {materia}
+    <span class='block'>
+      {tema}
+    </span>
+  </header>
+</Layout>
