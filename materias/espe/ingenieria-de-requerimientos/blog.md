@@ -10,3 +10,9 @@ El objetivo principal de la ingeniería de requerimientos es asegurar que el sis
 - **Validación**: Asegurarse de que los requerimientos especificados sean correctos y completos.
 
 Una correcta gestión de los requerimientos es esencial para evitar malentendidos, sobrecostos y retrasos en el proyecto, contribuyendo al éxito de los productos de software.
+
+## Modelos de proceso de software
+
+- **Modelo Waterfall (cascada)**: Algunos conceptos escencials son: especificación, desarrollo, validación y evolución.
+
+![screenshot_25-sep-2024_01-14-16](https://github.com/user-attachments/assets/0bcf5a87-e294-4041-87d8-1dc6ac1cf716)
