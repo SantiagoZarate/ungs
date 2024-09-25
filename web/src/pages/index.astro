@@ -1,10 +1,24 @@
 ---
+import {marked} from 'marked'
 import Layout from "../layouts/Layout.astro";
-const URL = "https://raw.githubusercontent.com/SantiagoZarate/ungs/main/materias/espe/ingenieria-de-requerimientos/blog.md"
+const URL = "https://raw.githubusercontent.com/SantiagoZarate/ungs/master/materias/espe/ingenieria-de-requerimientos/blog.md"
+let markdownContent = "";
+try {
+  const response = await fetch(URL);
+  if (response.ok) {
+    const markdown = await response.text();
+    markdownContent = await marked(markdown);
+  } else {
+    console.error("Failed to fetch markdown file.");
+  }
+} catch (error) {
+  console.error("Error fetching markdown content:", error);
+}
 ---
 
 <Layout title="Santiago Zarate UNGS blog">
   <section>
     UNGS BLOG
   </section>
+  <div class="markdown-content" set:html={markdownContent}></div>
 </Layout>

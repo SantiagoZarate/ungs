@@ -1,0 +1,10 @@
+.markdown-content {
+  & img {
+    margin: auto;
+    border-radius: 1em;
+  }
+
+  & p {
+    text-align: justify;
+  }
+}

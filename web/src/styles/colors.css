@@ -1,0 +1,7 @@
+:root {
+  --background: 0 10% 70%;
+}
+
+.dark {
+  --background: 0 20% 0%;
+}
