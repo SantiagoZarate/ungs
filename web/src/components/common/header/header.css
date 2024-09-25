@@ -1,0 +1,17 @@
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: scroll()) {
+    .header {
+      animation: headerScrollAnimation linear;
+      animation-range: 100px;
+      animation-timeline: scroll();
+      border-bottom: transparent;
+    }
+  }
+}
+
+@keyframes headerScrollAnimation {
+  to {
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid hsl(0deg, 0%, 50%);
+  }
+}

@@ -1,5 +1,7 @@
 ---
 import '../styles/index.css'
+import Header from '../components/common/header/Header.astro';
+import Footer from '../components/common/footer/Footer.astro';
 
 interface Props {
 	title: string;
@@ -18,7 +20,11 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="max-w-screen-tablet mx-auto prose lg:prose-xl font-geist bg-background">
-		<slot />
+	<body class="font-geist bg-background ">
+    <Header />
+    <section class="prose lg:prose-xl max-w-screen-tablet mx-auto pt-28 grid grid-rows-[1fr_auto] min-h-dvh">
+      <slot />
+      <Footer/>
+    </section>
 	</body>
 </html>
