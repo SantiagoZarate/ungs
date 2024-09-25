@@ -1,11 +1,20 @@
-<footer class="border-t border-black grid grid-cols-2">
+---
+import GithubIcon from '../../icons/GithubIcon.astro'
+import LinkedinIcon from '../../icons/LinkedinIcon.astro'
+---
+
+<footer class='flex justify-between border-t border-black'>
   <p>Made by Santiago Zarate, powered by Astro</p>
-  <ul class="flex flex-col gap-2">
+  <ul class='flex list-none gap-2'>
     <li>
-      <a href="https://github.com/SantiagoZarate">github</a>
+      <a target='_blank' href='https://github.com/SantiagoZarate'
+        ><GithubIcon /></a
+      >
     </li>
     <li>
-      <a href="https://linkedin.com/santiago-zarate-dev">linkedin</a>
+      <a target='_blank' href='https://linkedin.com/santiago-zarate-dev'
+        ><LinkedinIcon /></a
+      >
     </li>
   </ul>
 </footer>

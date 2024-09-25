@@ -1,0 +1,28 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import type { Materia } from '../../types/materia.type'
+
+// GitHub API URL to fetch course directories
+const GITHUB_API_URL =
+  'https://api.github.com/repos/SantiagoZarate/ungs/contents/materias?ref=master'
+
+// Fetch the list of courses (directories) from GitHub
+let courses: Materia[] = []
+try {
+  const response = await fetch(GITHUB_API_URL)
+  if (response.ok) {
+    courses = await response.json()
+    console.log(courses)
+  } else {
+    console.error('Failed to fetch courses from GitHub.')
+  }
+} catch (error) {
+  console.error('Error fetching courses:', error)
+}
+---
+
+<Layout title='Materias'>
+  <ul>
+    {courses.map((c) => <li>{c.name}</li>)}
+  </ul>
+</Layout>

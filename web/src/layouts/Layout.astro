@@ -1,30 +1,32 @@
 ---
 import '../styles/index.css'
-import Header from '../components/common/header/Header.astro';
-import Footer from '../components/common/footer/Footer.astro';
+import Header from '../components/common/header/Header.astro'
+import Footer from '../components/common/footer/Footer.astro'
 
 interface Props {
-	title: string;
+  title: string
 }
 
-const { title } = Astro.props;
+const { title } = Astro.props
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body class="font-geist bg-background ">
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='description' content='Astro description' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class='bg-background font-geist'>
     <Header />
-    <section class="prose lg:prose-xl max-w-screen-tablet mx-auto pt-28 grid grid-rows-[1fr_auto] min-h-dvh">
+    <section
+      class='prose mx-auto grid min-h-dvh max-w-screen-tablet grid-rows-[1fr_auto] pt-28 lg:prose-xl'
+    >
       <slot />
-      <Footer/>
+      <Footer />
     </section>
-	</body>
+  </body>
 </html>
