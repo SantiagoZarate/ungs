@@ -6,6 +6,7 @@ import BreadcrumbLink from '../../../../components/ui/BreadcrumbLink.astro'
 import AsideMenuLayout from '../../../../layouts/AsideMenuLayout.astro'
 import Layout from '../../../../layouts/Layout.astro'
 import './temasNavbar.css'
+import { getH2Headers } from '../../../../helpers/getHeader'
 
 export async function getStaticPaths() {
   const materiasDirectory = path.resolve('./public/materias')
@@ -67,22 +68,7 @@ try {
   ejercicios = []
 }
 
-function getH2Headers() {
-  const content = mdContent.toString()
-
-  const regex = /<h2>(.*?)<\/h2>/g
-  let match
-  let headersList = []
-
-  while ((match = regex.exec(content)) !== null) {
-    let headerText = match[1].trim()
-    // Remove innecesary characters
-    headerText = headerText.replace(/[^a-zA-Z0-9\s.]/g, '').trim()
-    headersList.push(headerText)
-  }
-
-  return headersList
-}
+const headers = getH2Headers(mdContent.toString())
 ---
 
 <Layout title={tema.replace(/-/g, ' ')!}>
@@ -95,7 +81,7 @@ function getH2Headers() {
       {tema.replace(/-/g, ' ')}
     </span>
   </header>
-  <div set:html={mdContent} />
+  <div data-md-content set:html={mdContent} />
   <AsideMenuLayout
     active={tema.replace(/-/g, ' ')}
     temas={temas.map((tema) => ({
@@ -106,6 +92,6 @@ function getH2Headers() {
       href: `/materias/${materia}/${tema}/${ejercicio}`,
       value: ejercicio.replace(/-/g, ' ')
     }))}
-    headers={getH2Headers()}
+    headers={headers}
   />
 </Layout>

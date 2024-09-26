@@ -3,7 +3,7 @@
   --md-secondary: hsl(190deg, 10%, 85%);
 }
 
-[data-astro-source-file] {
+[data-md-content] {
   & img {
     margin: auto;
     border-radius: 1em;
