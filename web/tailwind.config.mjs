@@ -1,22 +1,24 @@
-import tailwindTypo from "@tailwindcss/typography";
+import tailwindTypo from '@tailwindcss/typography'
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}"],
-  darkMode: ["class"],
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}'],
+  darkMode: ['class'],
   theme: {
     extend: {
       colors: {
-        background: "hsl(var(--background))",
-        primary: "hsl(var(--primary))",
+        background: 'hsl(var(--background))',
+        primary: 'hsl(var(--primary))',
+        secondary: 'hsl(var(--secondary))',
+        border: 'hsl(var(--border))'
       },
       fontFamily: {
-        geist: ["Geist", "sans-serif"],
+        geist: ['Geist', 'sans-serif']
       },
       screens: {
-        tablet: "805px",
-      },
-    },
+        tablet: '805px'
+      }
+    }
   },
-  plugins: [tailwindTypo],
-};
+  plugins: [tailwindTypo]
+}

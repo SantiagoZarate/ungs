@@ -1,9 +1,13 @@
 :root {
-  --background: 0 10% 75%;
-  --primary:0 10% 25%;
+  --background: 190 10% 75%;
+  --secondary: 190 10% 85%;
+  --primary: 0 10% 25%;
+  --border: 0 10% 50%;
 }
 
 .dark {
   --background: 0 20% 0%;
-  --primary:0 10% 95%;
+  --secondary: 0 10% 10%;
+  --primary: 0 10% 95%;
+  --border: 0 10% 50%;
 }
