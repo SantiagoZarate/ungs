@@ -10,6 +10,7 @@ export default {
         background: 'hsl(var(--background))',
         primary: 'hsl(var(--primary))',
         secondary: 'hsl(var(--secondary))',
+        accent: 'hsl(var(--accent))',
         border: 'hsl(var(--border))'
       },
       fontFamily: {

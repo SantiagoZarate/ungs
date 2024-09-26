@@ -1,6 +1,7 @@
 :root {
   --background: 190 10% 75%;
   --secondary: 190 10% 85%;
+  --accent: 190 25% 85%;
   --primary: 0 10% 25%;
   --border: 0 10% 50%;
 }
@@ -8,6 +9,7 @@
 .dark {
   --background: 0 20% 0%;
   --secondary: 0 10% 10%;
+  --accent: 190 25% 10%;
   --primary: 0 10% 95%;
   --border: 0 10% 50%;
 }

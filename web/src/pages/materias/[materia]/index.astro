@@ -44,6 +44,7 @@ try {
       {
         temas.map((tema) => (
           <a
+            transition:name={`tema-${tema}`}
             href={`/materias/${materia}/${tema}`}
             class='hover:bg-secondary group flex items-center gap-2 px-4 capitalize no-underline transition-colors'
           >

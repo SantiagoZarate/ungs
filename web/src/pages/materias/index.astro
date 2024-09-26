@@ -17,12 +17,12 @@ try {
   <header>Materias</header>
   <nav class='flex list-none flex-col gap-2'>
     {
-      materias.map((c) => (
+      materias.map((materia) => (
         <a
           class='rounded-xl px-2 no-underline transition hover:bg-black/40'
-          href={`./materias/${c}`}
+          href={`/materias/${materia}`}
         >
-          {c}
+          {materia}
         </a>
       ))
     }

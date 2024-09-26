@@ -1,14 +1,20 @@
 ---
+import UngsLocoIcon from '../../icons/UngsLocoIcon.astro'
 import './header.css'
 ---
 
-<header class='header fixed left-0 top-0 w-full border-b'>
+<header class='header fixed left-0 top-0 z-50 w-full border-b px-6'>
   <div
     class='mx-auto flex max-w-screen-tablet items-center justify-between py-4'
   >
-    <a href='/' class=''>
-      UNGS Archive
-      <span class='block text-xs'>Santiago Zarate </span>
+    <a href='/' class='flex items-center gap-2'>
+      <span class='aspect-square h-full rounded-md bg-black p-1'>
+        <UngsLocoIcon />
+      </span>
+      <div>
+        <h2>UNGS Archive</h2>
+        <span class='block text-xs'>Santiago Zarate </span>
+      </div>
     </a>
     <nav class='flex gap-4'>
       <a

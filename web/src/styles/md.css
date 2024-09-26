@@ -1,3 +1,8 @@
+:root {
+  --md-accent: hsl(190deg, 25%, 85%);
+  --md-secondary: hsl(190deg, 10%, 85%);
+}
+
 [data-astro-source-file] {
   & img {
     margin: auto;
@@ -6,5 +11,23 @@
 
   & p {
     text-align: justify;
+  }
+
+  & h1 {
+    text-align: center;
+  }
+
+  & li::marker {
+    color: var(--md-accent);
+  }
+
+  & li {
+    transition: background-color 200ms;
+    border-radius: 0.5em;
+  }
+
+  & li:hover {
+    background-color: var(--md-secondary);
+    transition: background-color 200ms;
   }
 }
