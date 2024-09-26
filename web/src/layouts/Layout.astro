@@ -1,8 +1,9 @@
 ---
-import '../styles/index.css'
-import Header from '../components/common/header/Header.astro'
-import Footer from '../components/common/footer/Footer.astro'
 import { ClientRouter } from 'astro:transitions'
+import Footer from '../components/common/footer/Footer.astro'
+import Header from '../components/common/header/Header.astro'
+import ScrollUpButton from '../components/scrollUpButton/ScrollUpButton.astro'
+import '../styles/index.css'
 
 interface Props {
   title: string
@@ -43,5 +44,6 @@ const { title } = Astro.props
       </section>
       <Footer />
     </section>
+    <ScrollUpButton />
   </body>
 </html>

@@ -1,0 +1,18 @@
+---
+import ChevronUpMiniIcon from '../icons/ChevronUpMiniIcon.astro'
+import './styles.css'
+---
+
+<button
+  class='scroll-up fixed bottom-0 right-0 m-24 flex size-12 items-center justify-center rounded-full bg-secondary shadow-lg transition-transform hover:-translate-y-1 active:bg-accent'
+>
+  <ChevronUpMiniIcon />
+</button>
+
+<script>
+  const $button = document.querySelector('.scroll-up')!
+
+  $button.addEventListener('click', () => {
+    window.scrollTo({ top: 0 })
+  })
+</script>

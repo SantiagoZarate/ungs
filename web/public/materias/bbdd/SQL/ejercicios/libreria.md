@@ -1,4 +1,6 @@
-# Ejercicio base de datos
+## Ejercicio libreria SQL
+
+### DDL (Data Definition Language)
 
 ```sql
 DROP DATABASE IF EXISTS libreria;
@@ -28,7 +30,11 @@ CREATE TABLE prestamos(
   fecha DATE,
   cant_dias INT
 );
+```
 
+### DML (Data Manipulation Language)
+
+```sql
 -- A.
 
 SELECT nombre, direccion FROM socie WHERE id_socie IN(

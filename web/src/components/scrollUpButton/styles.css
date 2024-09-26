@@ -1,0 +1,16 @@
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: scroll()) {
+    .scroll-up {
+      animation: scrollUpAnimation linear both;
+      animation-range: 0 100px;
+      animation-timeline: scroll();
+      opacity: 0%;
+    }
+  }
+}
+
+@keyframes scrollUpAnimation {
+  to {
+    opacity: 100%;
+  }
+}
