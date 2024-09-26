@@ -36,7 +36,9 @@ try {
     class='flex divide-x divide-border [&>*:first-child]:pr-2 [&>*:last-child]:pl-2'
   >
     <BreadcrumbLink href={`/materias`} value='materias' />
-    <BreadcrumbLink href={`/materias/${materia}`} value={materia} />
+    <span class='capitalize' transition:name={`materia-${materia}`}>
+      {materia.replace(/-/g, ' ')}
+    </span>
   </header>
   <section>
     <header class='flex items-center gap-2'>

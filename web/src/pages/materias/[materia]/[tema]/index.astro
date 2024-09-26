@@ -6,6 +6,7 @@ import Layout from '@layout/Layout.astro'
 import { marked } from 'marked'
 import { promises as fs } from 'node:fs'
 import path from 'node:path'
+import '../../../../styles/sticky-header.css'
 import './temasNavbar.css'
 
 export async function getStaticPaths() {
@@ -72,14 +73,16 @@ const headers = getH2Headers(mdContent.toString())
 ---
 
 <Layout title={tema.replace(/-/g, ' ')!}>
-  <header
-    class='flex divide-x divide-border *:px-2 [&>*:first-child]:pr-2 [&>*:last-child]:pl-2'
-  >
-    <BreadcrumbLink href={`/materias`} value='materias' />
-    <BreadcrumbLink href={`/materias/${materia}`} value={materia} />
-    <span class='capitalize' transition:name={`tema-${tema}`}>
-      {tema.replace(/-/g, ' ')}
-    </span>
+  <header class='sticky-header fixed left-0 top-[73px] mx-auto w-full'>
+    <section
+      class='mx-auto flex w-full max-w-screen-tablet divide-x divide-border *:px-2 [&>*:first-child]:pr-2 [&>*:last-child]:pl-2'
+    >
+      <BreadcrumbLink href={`/materias`} value='materias' />
+      <BreadcrumbLink href={`/materias/${materia}`} value={materia} />
+      <span class='capitalize' transition:name={`tema-${tema}`}>
+        {tema.replace(/-/g, ' ')}
+      </span>
+    </section>
   </header>
   <div data-md-content set:html={mdContent} />
   <AsideMenuLayout
