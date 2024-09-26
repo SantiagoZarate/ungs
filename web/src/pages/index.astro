@@ -1,5 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import { promises as fs } from 'fs'
+import { marked } from 'marked'
+
+let md = ''
+try {
+  md = await fs.readFile(`./public/materias/bbdd/sql/ejercicios/libreria.md`, {
+    encoding: 'utf-8'
+  })
+} catch (error) {}
+
+const mdContent = marked.parse(md)
 ---
 
 <Layout title='UNGS Archive - Santiago Zarate'>
@@ -15,4 +26,5 @@ import Layout from '../layouts/Layout.astro'
       recursos útiles para otros estudiantes interesados en el mundo de la informática.
     </p>
   </section>
+  <div set:html={mdContent} />
 </Layout>

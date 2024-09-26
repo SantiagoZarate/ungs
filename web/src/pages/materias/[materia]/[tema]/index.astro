@@ -1,11 +1,11 @@
 ---
-import Layout from '../../../../layouts/Layout.astro'
-import path from 'node:path'
-import { promises as fs } from 'node:fs'
 import { marked } from 'marked'
-import RigthArrowMicroIcon from '../../../../components/icons/RigthArrowMicroIcon.astro'
-import './temasNavbar.css'
+import { promises as fs } from 'node:fs'
+import path from 'node:path'
 import BreadcrumbLink from '../../../../components/ui/BreadcrumbLink.astro'
+import AsideMenuLayout from '../../../../layouts/AsideMenuLayout.astro'
+import Layout from '../../../../layouts/Layout.astro'
+import './temasNavbar.css'
 
 export async function getStaticPaths() {
   const materiasDirectory = path.resolve('./public/materias')
@@ -54,6 +54,18 @@ try {
 } catch (error) {
   throw new Error('There was an error')
 }
+
+const ejerciciosDirectory = path.resolve(
+  `./public/materias/${materia}/${tema}/ejercicios`
+)
+
+let ejercicios: string[] = []
+try {
+  const files = await fs.readdir(ejerciciosDirectory)
+  ejercicios = files.map((file) => file.split('.')[0])
+} catch (error) {
+  ejercicios = []
+}
 ---
 
 <Layout title={tema.replace(/-/g, ' ')!}>
@@ -67,26 +79,15 @@ try {
     </span>
   </header>
   <div set:html={mdContent} />
-  <aside
-    class='pointer-events-none fixed left-0 grid w-full grid-cols-[1fr_805px_1fr]'
-  >
-    <nav
-      class='temas-navbar pointer-events-auto hidden flex-col items-end pr-8 tablet:flex'
-    >
-      {
-        temas.map((t) => (
-          <a
-            href={`/materias/${materia}/${t}`}
-            data-selected={t === tema ? 'true' : 'false'}
-            class={`group flex w-full items-center justify-end gap-2 rounded-r-lg py-2 pr-4 text-sm capitalize no-underline transition-colors hover:bg-secondary ${t === tema && 'bg-accent'}`}
-          >
-            {t.replace(/-/g, ' ')}
-            <span class='-translate-x-2 opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100'>
-              <RigthArrowMicroIcon />
-            </span>
-          </a>
-        ))
-      }
-    </nav>
-  </aside>
+  <AsideMenuLayout
+    active={tema.replace(/-/g, ' ')}
+    temas={temas.map((tema) => ({
+      href: `/materias/${materia}/${tema}`,
+      value: tema.replace(/-/g, ' ')
+    }))}
+    ejercicios={ejercicios.map((ejercicio) => ({
+      href: `/materias/${materia}/${tema}/${ejercicio}`,
+      value: ejercicio.replace(/-/g, ' ')
+    }))}
+  />
 </Layout>

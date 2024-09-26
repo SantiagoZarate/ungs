@@ -1,5 +1,6 @@
 ---
 import RigthArrowMicroIcon from '../icons/RigthArrowMicroIcon.astro'
+import HoverableIcon from './HoverableIcon.astro'
 
 interface Props {
   href: string
@@ -15,9 +16,5 @@ const { href, id } = Astro.props
   class='group flex items-center gap-2 px-4 capitalize no-underline transition-colors hover:bg-secondary'
 >
   <slot />
-  <span
-    class='-translate-x-2 opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100'
-  >
-    <RigthArrowMicroIcon />
-  </span>
+  <HoverableIcon><RigthArrowMicroIcon /></HoverableIcon>
 </a>

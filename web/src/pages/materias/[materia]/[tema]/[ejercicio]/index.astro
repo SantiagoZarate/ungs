@@ -1,0 +1,133 @@
+---
+import { marked } from 'marked'
+import { promises as fs } from 'node:fs'
+import path from 'path'
+import BreadcrumbLink from '../../../../../components/ui/BreadcrumbLink.astro'
+import Layout from '../../../../../layouts/Layout.astro'
+import '../temasNavbar.css'
+import AsideMenuLayout from '../../../../../layouts/AsideMenuLayout.astro'
+
+export async function getStaticPaths() {
+  // Define the base directory where `materias` are stored
+  const materiasDirectory = path.resolve('./public/materias')
+  let materias: string[] = []
+
+  try {
+    // Read all `materia` directories inside the `materias` folder
+    materias = await fs.readdir(materiasDirectory)
+  } catch (error) {
+    throw new Error('Error reading materias directory')
+  }
+
+  let paths: {
+    params: { materia: string; tema: string; ejercicio: string }
+  }[] = []
+
+  // Loop through each `materia` to access its `temas` and `ejercicios`
+  for (const materia of materias) {
+    const temasDirectory = path.resolve(materiasDirectory, materia)
+    let temas: string[] = []
+
+    try {
+      // Read all `tema` directories inside each `materia` folder
+      temas = await fs.readdir(temasDirectory)
+    } catch (error) {
+      console.error(`Error reading temas for ${materia}: ${error}`)
+      continue
+    }
+
+    for (const tema of temas) {
+      const ejerciciosDirectory = path.resolve(
+        temasDirectory,
+        tema,
+        'ejercicios'
+      )
+      let ejercicios: string[] = []
+
+      try {
+        // Read all `ejercicio` markdown files inside each `tema/ejercicios` folder
+        ejercicios = await fs.readdir(ejerciciosDirectory)
+      } catch (error) {
+        console.error(
+          `Error reading ejercicios for ${materia}/${tema}: ${error}`
+        )
+        continue
+      }
+
+      // Generate paths for each `materia/tema/ejercicio` combination
+      paths = paths.concat(
+        ejercicios.map((ejercicio) => ({
+          params: {
+            materia,
+            tema: tema.replace('.md', ''),
+            ejercicio: ejercicio.replace('.md', '')
+          }
+        }))
+      )
+    }
+  }
+
+  // Return the list of paths for Astro to generate static pages
+  return paths
+}
+
+const { materia, tema, ejercicio } = Astro.params
+
+let md = ''
+try {
+  md = await fs.readFile(
+    `./public/materias/${materia}/${tema}/ejercicios/${ejercicio}.md`,
+    {
+      encoding: 'utf-8'
+    }
+  )
+} catch (error) {}
+
+const mdContent = marked(md)
+
+const temasDirectory = path.resolve(`./public/materias/${materia}`)
+
+let temas: string[] = []
+try {
+  temas = await fs.readdir(temasDirectory)
+} catch (error) {
+  throw new Error('There was an error')
+}
+
+const ejerciciosDirectory = path.resolve(
+  `./public/materias/${materia}/${tema}/ejercicios`
+)
+
+let ejercicios: string[] = []
+try {
+  const files = await fs.readdir(ejerciciosDirectory)
+  ejercicios = files.map((file) => file.split('.')[0])
+} catch (error) {
+  ejercicios = []
+}
+---
+
+<Layout title={tema! + ' - ' + ejercicio}>
+  <header
+    class='flex divide-x divide-border *:px-2 [&>*:first-child]:pr-2 [&>*:last-child]:pl-2'
+  >
+    <BreadcrumbLink href={`/materias`} value='materias' />
+    <BreadcrumbLink href={`/materias/${materia}`} value={materia!} />
+    <BreadcrumbLink href={`/materias/${materia}/${tema}`} value={tema!} />
+    <span class='capitalize' transition:name={`tema-${tema}`}>
+      {ejercicio}
+    </span>
+  </header>
+  <div set:html={mdContent} />
+  <AsideMenuLayout
+    active={tema}
+    temas={temas.map((tema) => ({
+      href: `/materias/${materia}/${tema}`,
+      value: tema.replace(/-/g, ' ')
+    }))}
+    ejercicios={ejercicios.map((ejercicio) => ({
+      href: `/materias/${materia}/${tema}/${ejercicio}`,
+      value: ejercicio.replace(/-/g, ' ')
+    }))}
+  />
+</Layout>

@@ -1,0 +1,58 @@
+---
+import RigthArrowMicroIcon from '../components/icons/RigthArrowMicroIcon.astro'
+import HoverableIcon from '../components/ui/HoverableIcon.astro'
+
+interface Props {
+  temas: { value: string; href: string }[]
+  ejercicios: { value: string; href: string }[]
+  active: string
+}
+
+const { ejercicios, temas, active } = Astro.props
+---
+
+<aside
+  class='pointer-events-none fixed left-0 grid w-full grid-cols-[1fr_805px_1fr]'
+>
+  <section
+    class='temas-navbar pointer-events-auto hidden flex-col items-end gap-12 pr-8 tablet:flex'
+  >
+    <article class='flex w-full flex-col'>
+      <header class='pl-48'>Temas</header>
+      <nav class=''>
+        {
+          temas.map((tema) => (
+            <a
+              href={tema.href}
+              data-selected={tema === tema ? 'true' : 'false'}
+              class={`group flex w-full items-center justify-end gap-2 rounded-r-lg py-2 pr-4 text-sm capitalize no-underline transition-colors hover:bg-secondary ${tema.value === active && 'bg-accent'}`}
+            >
+              {tema.value}
+              <HoverableIcon>
+                <RigthArrowMicroIcon />
+              </HoverableIcon>
+            </a>
+          ))
+        }
+      </nav>
+    </article>
+    <article class='flex w-full flex-col'>
+      <header class='pl-48'>Ejercicios</header>
+      <nav class=''>
+        {
+          ejercicios.map((ejercicio) => (
+            <a
+              href={ejercicio.href}
+              class={`group flex w-full items-center justify-end gap-2 rounded-r-lg py-2 pr-4 text-sm capitalize no-underline transition-colors hover:bg-secondary`}
+            >
+              {ejercicio.value}
+              <HoverableIcon>
+                <RigthArrowMicroIcon />
+              </HoverableIcon>
+            </a>
+          ))
+        }
+      </nav>
+    </article>
+  </section>
+</aside>

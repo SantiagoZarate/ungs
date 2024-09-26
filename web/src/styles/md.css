@@ -30,4 +30,8 @@
     background-color: var(--md-secondary);
     transition: background-color 200ms;
   }
+
+  & pre {
+    max-width: 805px;
+  }
 }
