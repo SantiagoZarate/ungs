@@ -2,6 +2,8 @@
 import Layout from '../../layouts/Layout.astro'
 import path from 'node:path'
 import { promises as fs } from 'node:fs'
+import List from '../../components/ui/List.astro'
+import ListItem from '../../components/ui/ListItem.astro'
 
 const materiasDirectory = path.resolve('./public/materias')
 
@@ -14,17 +16,16 @@ try {
 ---
 
 <Layout title='Materias'>
-  <header>Materias</header>
-  <nav class='flex list-none flex-col gap-2'>
+  <header class='flex'>
+    <span>Materias</span>
+  </header>
+  <List>
     {
       materias.map((materia) => (
-        <a
-          class='rounded-xl px-2 no-underline transition hover:bg-black/40'
-          href={`/materias/${materia}`}
-        >
-          {materia}
-        </a>
+        <ListItem href={`/materias/${materia}`} id={'materia' + materia}>
+          {materia.replace(/-/g, ' ')}
+        </ListItem>
       ))
     }
-  </nav>
+  </List>
 </Layout>

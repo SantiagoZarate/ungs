@@ -4,8 +4,8 @@ import path from 'node:path'
 import { promises as fs } from 'node:fs'
 import { marked } from 'marked'
 import RigthArrowMicroIcon from '../../../../components/icons/RigthArrowMicroIcon.astro'
-import LeftArrowMicroIcon from '../../../../components/icons/LeftArrowMicroIcon.astro'
 import './temasNavbar.css'
+import BreadcrumbLink from '../../../../components/ui/BreadcrumbLink.astro'
 
 export async function getStaticPaths() {
   const materiasDirectory = path.resolve('./public/materias')
@@ -22,10 +22,9 @@ export async function getStaticPaths() {
     let temas: string[] = []
     try {
       temas = await fs.readdir(temasDirectory)
-      // Generate paths for each tema
       paths = paths.concat(
         temas.map((tema) => ({
-          params: { materia, tema: tema.replace('.md', '') } // Remove .md extension
+          params: { materia, tema: tema.replace('.md', '') }
         }))
       )
     } catch (error) {
@@ -59,17 +58,10 @@ try {
 
 <Layout title={tema.replace(/-/g, ' ')!}>
   <header
-    class='divide-border flex divide-x [&>*:first-child]:pr-2 [&>*:last-child]:pl-2'
+    class='flex divide-x divide-border *:px-2 [&>*:first-child]:pr-2 [&>*:last-child]:pl-2'
   >
-    <a href={`/materias/${materia}`} class='group flex items-center gap-2'>
-      <span
-        class='translate-x-2 opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100'
-        ><LeftArrowMicroIcon /></span
-      >
-      <span class='-translate-x-4 transition group-hover:translate-x-0'>
-        {materia}
-      </span>
-    </a>
+    <BreadcrumbLink href={`/materias`} value='materias' />
+    <BreadcrumbLink href={`/materias/${materia}`} value={materia} />
     <span class='capitalize' transition:name={`tema-${tema}`}>
       {tema.replace(/-/g, ' ')}
     </span>
@@ -86,7 +78,7 @@ try {
           <a
             href={`/materias/${materia}/${t}`}
             data-selected={t === tema ? 'true' : 'false'}
-            class={`hover:bg-secondary group flex w-full items-center justify-end gap-2 rounded-r-lg py-2 pr-4 text-sm capitalize no-underline transition-colors ${t === tema && 'bg-accent'}`}
+            class={`group flex w-full items-center justify-end gap-2 rounded-r-lg py-2 pr-4 text-sm capitalize no-underline transition-colors hover:bg-secondary ${t === tema && 'bg-accent'}`}
           >
             {t.replace(/-/g, ' ')}
             <span class='-translate-x-2 opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100'>

@@ -1,0 +1,23 @@
+---
+import RigthArrowMicroIcon from '../icons/RigthArrowMicroIcon.astro'
+
+interface Props {
+  href: string
+  id?: string
+}
+
+const { href, id } = Astro.props
+---
+
+<a
+  transition:name={id}
+  href={href}
+  class='group flex items-center gap-2 px-4 capitalize no-underline transition-colors hover:bg-secondary'
+>
+  <slot />
+  <span
+    class='-translate-x-2 opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100'
+  >
+    <RigthArrowMicroIcon />
+  </span>
+</a>

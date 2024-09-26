@@ -1,0 +1,25 @@
+---
+import LeftArrowMicroIcon from '../icons/LeftArrowMicroIcon.astro'
+
+interface Props {
+  href: string
+  value: string
+}
+
+const { href, value } = Astro.props
+---
+
+<a
+  href={href}
+  class='group relative flex items-center gap-2 transition-colors hover:bg-secondary'
+>
+  <span
+    class='absolute inset-0 flex translate-y-4 items-center justify-center opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100'
+    ><LeftArrowMicroIcon /></span
+  >
+  <span
+    class='capitalize transition group-hover:-translate-y-4 group-hover:translate-x-0 group-hover:opacity-0'
+  >
+    {value}
+  </span>
+</a>
