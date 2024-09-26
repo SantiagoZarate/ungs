@@ -1,15 +1,27 @@
 @media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: scroll()) {
-    .temas-navbar {
-      animation: temasNavbarScrollAnimation linear both;
+    .temas-aside > :first-child {
+      animation: temasNavbarScrollFirstChild linear both;
+      animation-range: 0 50dvh;
+      animation-timeline: scroll();
+    }
+
+    .temas-aside > :last-child {
+      animation: temasNavbarScrollLastChild linear both;
       animation-range: 0 50dvh;
       animation-timeline: scroll();
     }
   }
 }
 
-@keyframes temasNavbarScrollAnimation {
+@keyframes temasNavbarScrollFirstChild {
   to {
     transform: translateX(-10%);
+  }
+}
+
+@keyframes temasNavbarScrollLastChild {
+  to {
+    transform: translateX(10%);
   }
 }

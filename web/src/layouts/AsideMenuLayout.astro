@@ -5,17 +5,18 @@ import HoverableIcon from '../components/ui/HoverableIcon.astro'
 interface Props {
   temas: { value: string; href: string }[]
   ejercicios: { value: string; href: string }[]
+  headers: string[]
   active: string
 }
 
-const { ejercicios, temas, active } = Astro.props
+const { ejercicios, temas, active, headers = [] } = Astro.props
 ---
 
 <aside
-  class='pointer-events-none fixed left-0 grid w-full grid-cols-[1fr_805px_1fr]'
+  class='temas-aside pointer-events-none fixed left-0 grid w-full grid-cols-[1fr_805px_1fr]'
 >
   <section
-    class='temas-navbar pointer-events-auto hidden flex-col items-end gap-12 pr-8 tablet:flex'
+    class='pointer-events-auto hidden flex-col items-end gap-12 pr-8 tablet:flex'
   >
     <article class='flex w-full flex-col'>
       <header class='pl-48'>Temas</header>
@@ -55,4 +56,50 @@ const { ejercicios, temas, active } = Astro.props
       </nav>
     </article>
   </section>
+  <div></div>
+  <section class=''>
+    <ul class='pointer-events-auto flex list-none flex-col'>
+      {
+        headers?.map((header) => (
+          <button
+            data-go-to-header
+            class='px-2 py-2 text-start text-xs transition hover:bg-accent'
+          >
+            {header}
+          </button>
+        ))
+      }
+    </ul>
+  </section>
 </aside>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const $buttons = document.querySelectorAll('[data-go-to-header]')
+
+    $buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        goToHeader(button.textContent!)
+      })
+    })
+
+    function goToHeader(value: string) {
+      const headers = document.querySelectorAll('h2')
+
+      let clickedHeader: HTMLHeadingElement | null = null
+      headers.forEach((header) => {
+        if (
+          header.innerText
+            ?.replace(/[^a-zA-Z0-9\s.]/g, '')
+            .trim()
+            .toLowerCase() === value.trim().toLowerCase()
+        ) {
+          clickedHeader = header
+        }
+      })
+
+      const { y } = clickedHeader!.getBoundingClientRect()
+      window.scroll({ top: y + window.scrollY - 100 })
+    }
+  })
+</script>

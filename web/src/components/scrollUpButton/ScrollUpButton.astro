@@ -10,9 +10,11 @@ import './styles.css'
 </button>
 
 <script>
-  const $button = document.querySelector('.scroll-up')!
+  document.addEventListener('astro:page-load', () => {
+    const $button = document.querySelector('.scroll-up')!
 
-  $button.addEventListener('click', () => {
-    window.scrollTo({ top: 0 })
+    $button.addEventListener('click', () => {
+      window.scrollTo({ top: 0 })
+    })
   })
 </script>
