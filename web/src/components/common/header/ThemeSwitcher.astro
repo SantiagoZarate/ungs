@@ -1,0 +1,38 @@
+---
+import SunMiniIcon from '../../icons/SunMiniIcon.astro'
+---
+
+<button
+  data-theme-switcher
+  class='rounded-md border border-border p-2 text-border transition-colors hover:bg-accent'
+>
+  <SunMiniIcon />
+</button>
+
+<script>
+  const $button = document.querySelector('[data-theme-switcher]')!
+  const THEME_KEY = 'ungs-archive-theme'
+
+  $button.addEventListener('click', () => {
+    toggleTheme()
+  })
+
+  function toggleTheme() {
+    if (localStorage.getItem(THEME_KEY) === 'dark') {
+      localStorage.setItem(THEME_KEY, 'light')
+      document.documentElement.classList.remove('dark')
+    } else {
+      localStorage.setItem(THEME_KEY, 'dark')
+      document.documentElement.classList.add('dark')
+    }
+  }
+
+  // function readThemeFromLocalStorage() {
+  //   const theme = localStorage.getItem(THEME_KEY)
+  //   if (theme) {
+  //     document.documentElement.classList.add('dark')
+  //   }
+  // }
+
+  // readThemeFromLocalStorage()
+</script>

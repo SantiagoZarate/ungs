@@ -1,15 +1,18 @@
 :root {
-  --background: 190 10% 75%;
-  --secondary: 190 10% 85%;
-  --accent: 190 25% 85%;
+  --tint-color: 190;
+  --background: var(--tint-color) 10% 75%;
+  --background-foreground: var(--tint-color) 80% 3%;
+  --secondary: var(--tint-color) 10% 85%;
+  --accent: var(--tint-color) 25% 85%;
   --primary: 0 10% 25%;
-  --border: 0 10% 50%;
+  --border: var(--tint-color) 10% 50%;
 }
 
 .dark {
-  --background: 0 20% 0%;
+  --background: var(--tint-color) 80% 3%;
+  --background-foreground: var(--tint-color) 10% 75%;
   --secondary: 0 10% 10%;
-  --accent: 190 25% 10%;
-  --primary: 0 10% 95%;
-  --border: 0 10% 50%;
+  --accent: var(--tint-color) 25% 10%;
+  --primary: var(--tint-color) 10% 95%;
+  --border: var(--tint-color) 10% 50%;
 }

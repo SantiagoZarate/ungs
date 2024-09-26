@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         background: 'hsl(var(--background))',
+        'background-foreground': 'hsl(var(--background-foreground))',
         primary: 'hsl(var(--primary))',
         secondary: 'hsl(var(--secondary))',
         accent: 'hsl(var(--accent))',
