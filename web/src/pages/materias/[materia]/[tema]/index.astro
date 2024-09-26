@@ -1,12 +1,12 @@
 ---
+import BreadcrumbLink from '@component/ui/BreadcrumbLink.astro'
+import { getH2Headers } from '@helper/getHeader'
+import AsideMenuLayout from '@layout/AsideMenuLayout.astro'
+import Layout from '@layout/Layout.astro'
 import { marked } from 'marked'
 import { promises as fs } from 'node:fs'
 import path from 'node:path'
-import BreadcrumbLink from '../../../../components/ui/BreadcrumbLink.astro'
-import AsideMenuLayout from '../../../../layouts/AsideMenuLayout.astro'
-import Layout from '../../../../layouts/Layout.astro'
 import './temasNavbar.css'
-import { getH2Headers } from '../../../../helpers/getHeader'
 
 export async function getStaticPaths() {
   const materiasDirectory = path.resolve('./public/materias')

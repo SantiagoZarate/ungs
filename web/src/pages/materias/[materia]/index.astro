@@ -1,13 +1,12 @@
 ---
-import Layout from '../../../layouts/Layout.astro'
-import path from 'node:path'
+import DocumentMicroIcon from '@component/icons/DocumentMicroIcon.astro'
+import StackMicroIcon from '@component/icons/StackMicroIcon.astro'
+import BreadcrumbLink from '@component/ui/BreadcrumbLink.astro'
+import List from '@component/ui/List.astro'
+import ListItem from '@component/ui/ListItem.astro'
+import Layout from '@layout/Layout.astro'
 import { promises as fs } from 'node:fs'
-import RigthArrowMicroIcon from '../../../components/icons/RigthArrowMicroIcon.astro'
-import DocumentMicroIcon from '../../../components/icons/DocumentMicroIcon.astro'
-import StackMicroIcon from '../../../components/icons/StackMicroIcon.astro'
-import BreadcrumbLink from '../../../components/ui/BreadcrumbLink.astro'
-import ListItem from '../../../components/ui/ListItem.astro'
-import List from '../../../components/ui/List.astro'
+import path from 'node:path'
 
 export async function getStaticPaths() {
   let materias: string[] = []
