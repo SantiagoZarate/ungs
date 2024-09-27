@@ -1,5 +1,5 @@
 ---
-import BreadcrumbLink from '@component/ui/BreadcrumbLink.astro'
+import StickyHeader from '@component/common/stickyHeader/StickyHeader.astro'
 import AsideMenuLayout from '@layout/AsideMenuLayout.astro'
 import Layout from '@layout/Layout.astro'
 import { marked } from 'marked'
@@ -108,16 +108,14 @@ try {
 ---
 
 <Layout title={tema! + ' - ' + ejercicio}>
-  <header
-    class='flex divide-x divide-border *:px-2 [&>*:first-child]:pr-2 [&>*:last-child]:pl-2'
-  >
-    <BreadcrumbLink href={`/materias`} value='materias' />
-    <BreadcrumbLink href={`/materias/${materia}`} value={materia!} />
-    <BreadcrumbLink href={`/materias/${materia}/${tema}`} value={tema!} />
-    <span class='capitalize' transition:name={`tema-${tema}`}>
-      {ejercicio}
-    </span>
-  </header>
+  <StickyHeader
+    links={[
+      { href: `/materias`, value: 'materias' },
+      { href: `/materias/${materia}`, value: materia },
+      { href: `/materias/${materia}/${tema}`, value: tema }
+    ]}
+    activeSlug={ejercicio.replace(/-/g, ' ')}
+  />
   <div data-md-content set:html={mdContent} />
   <AsideMenuLayout
     active={tema}

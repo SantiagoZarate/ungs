@@ -37,24 +37,26 @@ const { ejercicios, temas, active, headers = [] } = Astro.props
         }
       </nav>
     </article>
-    <article class='flex w-full flex-col'>
-      <header class='pl-48'>Ejercicios</header>
-      <nav class=''>
-        {
-          ejercicios.map((ejercicio) => (
-            <a
-              href={ejercicio.href}
-              class={`group flex w-full items-center justify-end gap-2 rounded-r-lg py-2 pr-4 text-sm capitalize no-underline transition-colors hover:bg-secondary`}
-            >
-              {ejercicio.value}
-              <HoverableIcon>
-                <RigthArrowMicroIcon />
-              </HoverableIcon>
-            </a>
-          ))
-        }
-      </nav>
-    </article>
+    {
+      ejercicios.length ? (
+        <article class='flex w-full flex-col'>
+          <header class='pl-48'>Ejercicios</header>
+          <nav class=''>
+            {ejercicios.map((ejercicio) => (
+              <a
+                href={ejercicio.href}
+                class={`group flex w-full items-center justify-end gap-2 rounded-r-lg py-2 pr-4 text-sm capitalize no-underline transition-colors hover:bg-secondary`}
+              >
+                {ejercicio.value}
+                <HoverableIcon>
+                  <RigthArrowMicroIcon />
+                </HoverableIcon>
+              </a>
+            ))}
+          </nav>
+        </article>
+      ) : null
+    }
   </section>
   <div></div>
   <section class=''>
