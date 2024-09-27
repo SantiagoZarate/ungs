@@ -1,5 +1,6 @@
 :root {
   --header-background: hsl(190deg, 10%, 75%);
+  --header-accent: hsl(190deg, 25%, 85%);
 }
 
 .dark {
@@ -9,6 +10,14 @@
 .header {
   border-bottom: 1px solid hsl(0deg, 0%, 50%);
   background-color: var(--header-background);
+}
+
+.header:has(#blur-effect:checked) {
+  background-color: var(--header-background);
+}
+
+#blur-effect:checked ~ label {
+  background-color: var(--header-accent);
 }
 
 @media (prefers-reduced-motion: no-preference) {

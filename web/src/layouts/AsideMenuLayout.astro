@@ -12,18 +12,18 @@ const { ejercicios, temas, headers = [] } = Astro.props
 ---
 
 <aside
-  class='temas-aside pointer-events-none fixed left-0 hidden w-full grid-cols-[1fr_805px_1fr] xl:grid'
+  class='temas-aside pointer-events-none fixed left-0 hidden h-full w-full grid-cols-[1fr_805px_1fr] xl:grid'
 >
   <section class='pointer-events-auto flex flex-col items-end gap-12 pr-8'>
     <article class='flex w-full flex-col'>
       <header class='pl-48'>Temas</header>
-      <nav class=''>
+      <nav class='[&>:last-child]:border-b'>
         {
           temas.map((tema) => (
             <a
               href={tema.href}
               data-selected={tema === tema ? 'true' : 'false'}
-              class={`group flex w-full items-center justify-end gap-2 rounded-r-lg py-2 pr-4 text-sm capitalize no-underline transition-colors hover:bg-secondary ${tema.active ? 'bg-accent' : 'border border-l-0 border-dashed border-border'}`}
+              class={`group flex w-full items-center justify-end gap-2 rounded-r-lg py-2 pr-4 text-sm capitalize no-underline transition-colors hover:bg-secondary ${tema.active ? 'bg-accent' : 'border border-b-0 border-l-0 border-dashed border-border'}`}
             >
               {tema.value}
               <HoverableIcon>
@@ -55,7 +55,11 @@ const { ejercicios, temas, headers = [] } = Astro.props
       ) : null
     }
   </section>
-  <div></div>
+  <div
+    data-blurred-mask
+    class='-translate-y-[10vh] backdrop-blur-sm [mask-image:linear-gradient(transparent_80%,black_90%)]'
+  >
+  </div>
   <section class=''>
     <ul class='pointer-events-auto flex list-none flex-col'>
       {

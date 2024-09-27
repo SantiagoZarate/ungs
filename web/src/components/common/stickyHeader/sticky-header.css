@@ -3,6 +3,10 @@
   background-color: var(--header-background);
 }
 
+html:has(#blur-effect:checked) .sticky-header {
+  background-color: var(--header-background);
+}
+
 @media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: scroll()) {
     .sticky-header {

@@ -1,5 +1,6 @@
 ---
 import UngsLocoIcon from '../../icons/UngsLocoIcon.astro'
+import BlurSwitcher from './BlurSwitcher.astro'
 import './header.css'
 import ThemeSwitcher from './ThemeSwitcher.astro'
 ---
@@ -10,7 +11,7 @@ import ThemeSwitcher from './ThemeSwitcher.astro'
   >
     <a href='/' class='flex items-center gap-2'>
       <span
-        class='bg-background-foreground aspect-square h-full rounded-md p-1 text-background'
+        class='aspect-square h-full rounded-md bg-background-foreground p-1 text-background'
       >
         <UngsLocoIcon />
       </span>
@@ -31,6 +32,7 @@ import ThemeSwitcher from './ThemeSwitcher.astro'
         >
       </nav>
       <ThemeSwitcher />
+      <BlurSwitcher />
     </section>
   </div>
 </header>

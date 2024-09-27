@@ -1,0 +1,33 @@
+---
+import SparklesMiniIcon from '@component/icons/SparklesMiniIcon.astro'
+---
+
+<input id='blur-effect' hidden type='checkbox' />
+<label
+  title='toggle blur effects'
+  for='blur-effect'
+  class='cursor-pointer rounded-md border border-border p-2 text-border transition-colors hover:bg-accent'
+>
+  <SparklesMiniIcon />
+</label>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const $input = document.querySelector('#blur-effect')!
+    const LOCAL_STORAGE_KEY = 'ungs-archive-blur'
+
+    if (localStorage.getItem(LOCAL_STORAGE_KEY) === 'true') {
+      // @ts-ignore
+      $input.checked = true
+    }
+
+    $input.addEventListener('change', () => {
+      // @ts-ignore
+      if ($input.checked) {
+        localStorage.setItem(LOCAL_STORAGE_KEY, 'true')
+      } else {
+        localStorage.removeItem(LOCAL_STORAGE_KEY)
+      }
+    })
+  })
+</script>
