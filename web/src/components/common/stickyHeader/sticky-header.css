@@ -9,6 +9,7 @@
       animation: stickyHeaderAnimation linear both;
       animation-range: 0 100px;
       animation-timeline: scroll();
+      background-color: transparent;
       border-bottom: 1px solid transparent;
       backdrop-filter: blur(0px);
     }

@@ -11,61 +11,59 @@
   --md-card-foreground: hsl(190deg, 10%, 85%);
 }
 
-[data-md-content] {
-  & img {
-    margin: auto;
-    border-radius: 1em;
-  }
+[data-md-content] img {
+  margin: auto;
+  border-radius: 1em;
+}
 
-  & p {
-    text-align: justify;
-  }
+[data-md-content] p {
+  text-align: justify;
+}
 
-  & h1 {
-    text-align: center;
-  }
+[data-md-content] h1 {
+  text-align: center;
+}
 
-  & h2 {
-    text-decoration: underline;
-  }
+[data-md-content] h2 {
+  text-decoration: underline;
+}
 
-  & li::marker {
-    color: var(--md-accent);
-  }
+[data-md-content] li::marker {
+  color: var(--md-accent);
+}
 
-  & li {
-    transition: background-color 200ms;
-    border-radius: 0.5em;
-  }
+[data-md-content] li {
+  transition: background-color 200ms;
+  border-radius: 0.5em;
+}
 
-  & li:hover {
-    background-color: var(--md-secondary);
-    transition: background-color 200ms;
-  }
+[data-md-content] li:hover {
+  background-color: var(--md-secondary);
+  transition: background-color 200ms;
+}
 
-  & pre {
-    max-width: 805px;
-  }
+[data-md-content] pre {
+  max-width: 805px;
+}
 
-  & blockquote {
-    background-color: var(--md-card);
-    color: var(--md-card-foreground);
-    padding-left: 2em;
-    padding-right: 1em;
-    padding-block: 0.5em;
-    border-inline-start-color: var(--md-accent);
-    border-radius: 0 0.5em 0.5em 0;
+[data-md-content] blockquote {
+  background-color: var(--md-card);
+  color: var(--md-card-foreground);
+  padding-left: 2em;
+  padding-right: 1em;
+  padding-block: 0.5em;
+  border-inline-start-color: var(--md-accent);
+  border-radius: 0 0.5em 0.5em 0;
+}
 
-    & :first-child {
-      font-weight: 700;
-    }
+[data-md-content] blockquote :first-child {
+  font-weight: 700;
+}
 
-    & :not(:first-child) {
-      font-weight: 300;
-    }
+[data-md-content] blockquote :not(:first-child) {
+  font-weight: 300;
+}
 
-    & :first-child::before {
-      content: '';
-    }
-  }
+[data-md-content] blockquote :first-child::before {
+  content: '';
 }

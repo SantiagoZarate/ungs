@@ -4,14 +4,14 @@
   --background-foreground: var(--tint-color) 80% 3%;
   --secondary: var(--tint-color) 10% 85%;
   --accent: var(--tint-color) 25% 85%;
-  --primary: 0 10% 25%;
+  --primary: var(--tint-color) 10% 25%;
   --border: var(--tint-color) 10% 50%;
 }
 
 .dark {
   --background: var(--tint-color) 80% 3%;
   --background-foreground: var(--tint-color) 10% 75%;
-  --secondary: 0 10% 10%;
+  --secondary: var(--tint-color) 10% 10%;
   --accent: var(--tint-color) 25% 10%;
   --primary: var(--tint-color) 10% 95%;
   --border: var(--tint-color) 10% 50%;
