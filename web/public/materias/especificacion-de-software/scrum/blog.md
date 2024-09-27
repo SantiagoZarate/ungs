@@ -9,6 +9,18 @@ Tres pilares en los que se apoya scrum para llevar el control empirico del proye
 - **Adaptación**: Si un inspector determina que uno o más aspectos de un proceso se desvían de límites aceptables y que el producto resultante será inaceptable,
   el proceso o el material que está siendo procesado deben ajustarse.
 
+## 💎 Los valores de Scrum.
+
+**Compromiso**: El equipo Scrum se compromete a lograr sus objetivos y apoyarse entre ellos.
+
+**Foco**: El foco principal del equipo Scrum está puesto en el trabajo del Sprint para lograr el mayor progreso posible hacia el objetivo.
+
+**Franqueza**: El equipo Scrum y los interesados muestran sinceridad con respecto al trabajo y a los desafíos.
+
+**Respeto**: Los miembros del Equipo Scrum se respetan entre sí como personas capaces e independientes y son respetados como tales por las personas con quienes ellos trabajan.
+
+**Coraje**: Los miembros del Equipo Scrum tienen el coraje de hacer lo correcto y de trabajar en problemas difíciles.
+
 ## 👥 Roles dentro de un equipo de scrum (scrum team).
 
 ### El Dueño de Producto (Product Owner).
