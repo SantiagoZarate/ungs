@@ -56,7 +56,7 @@
   border-radius: 0 0.5em 0.5em 0;
 }
 
-[data-md-content] blockquote :first-child {
+[data-md-content] blockquote > :first-child {
   font-weight: 700;
 }
 
@@ -66,4 +66,20 @@
 
 [data-md-content] blockquote :first-child::before {
   content: '';
+}
+
+/* header-click animation for when header has been clicked */
+.header-clicked {
+  animation: headerClicked 1.5s both;
+}
+
+@keyframes headerClicked {
+  0%,
+  100% {
+    background-color: inherit;
+  }
+  50%,
+  80% {
+    background-color: var(--md-accent);
+  }
 }

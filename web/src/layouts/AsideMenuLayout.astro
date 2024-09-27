@@ -96,7 +96,10 @@ const { ejercicios, temas, headers = [] } = Astro.props
           clickedHeader = header
         }
       })
-
+      clickedHeader!.classList.add('header-clicked')
+      clickedHeader!.addEventListener('animationend', () => {
+        clickedHeader!.classList.remove('header-clicked')
+      })
       const { y } = clickedHeader!.getBoundingClientRect()
       window.scroll({ top: y + window.scrollY - 140 })
     }
