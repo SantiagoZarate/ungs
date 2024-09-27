@@ -1,6 +1,14 @@
 :root {
   --md-accent: hsl(190deg, 25%, 85%);
   --md-secondary: hsl(190deg, 10%, 85%);
+  --md-card: hsl(190deg, 10%, 65%);
+  --md-card-foreground: hsl(190deg, 10%, 25%);
+}
+
+.dark {
+  --md-secondary: hsl(190deg, 10%, 25%);
+  --md-card: hsl(190deg, 10%, 35%);
+  --md-card-foreground: hsl(190deg, 10%, 85%);
 }
 
 [data-md-content] {
@@ -15,6 +23,10 @@
 
   & h1 {
     text-align: center;
+  }
+
+  & h2 {
+    text-decoration: underline;
   }
 
   & li::marker {
@@ -33,5 +45,27 @@
 
   & pre {
     max-width: 805px;
+  }
+
+  & blockquote {
+    background-color: var(--md-card);
+    color: var(--md-card-foreground);
+    padding-left: 2em;
+    padding-right: 1em;
+    padding-block: 0.5em;
+    border-inline-start-color: var(--md-accent);
+    border-radius: 0 0.5em 0.5em 0;
+
+    & :first-child {
+      font-weight: 700;
+    }
+
+    & :not(:first-child) {
+      font-weight: 300;
+    }
+
+    & :first-child::before {
+      content: '';
+    }
   }
 }

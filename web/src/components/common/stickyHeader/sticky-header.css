@@ -1,6 +1,10 @@
+.sticky-header {
+  border-bottom: 1px solid hsl(0deg, 0%, 50%);
+  background-color: var(--header-background);
+}
+
 @media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: scroll()) {
-    .sticky-header > div,
     .sticky-header {
       animation: stickyHeaderAnimation linear both;
       animation-range: 0 100px;

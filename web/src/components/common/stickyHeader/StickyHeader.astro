@@ -19,7 +19,10 @@ const { activeSlug, links } = Astro.props
         <BreadcrumbLink href={link.href} value={link.value} />
       ))
     }
-    <span class='capitalize' transition:name={`tema-${activeSlug}`}>
+    <span
+      class='text-ellipsis py-2 text-sm capitalize'
+      transition:name={`tema-${activeSlug}`}
+    >
       {activeSlug}
     </span>
   </section>

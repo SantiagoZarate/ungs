@@ -1,8 +1,8 @@
 ---
-import { ClientRouter } from 'astro:transitions'
 import Footer from '@component/common/footer/Footer.astro'
 import Header from '@component/common/header/Header.astro'
 import ScrollUpButton from '@component/scrollUpButton/ScrollUpButton.astro'
+import { ClientRouter } from 'astro:transitions'
 import '../styles/index.css'
 
 interface Props {
@@ -37,7 +37,7 @@ const { title } = Astro.props
   <body class='bg-background px-6 font-geist text-primary'>
     <Header />
     <section
-      class='prose relative mx-auto grid min-h-dvh max-w-screen-tablet grid-rows-[1fr_auto] pt-28 lg:prose-xl'
+      class='prose relative mx-auto grid min-h-dvh max-w-screen-tablet grid-rows-[1fr_auto] text-pretty pt-28 antialiased dark:prose-invert md:prose-lg lg:prose-xl'
     >
       <section class='flex flex-col gap-12 pt-12'>
         <slot />

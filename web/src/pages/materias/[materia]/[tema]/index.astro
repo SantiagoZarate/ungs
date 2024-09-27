@@ -81,14 +81,15 @@ const headers = getH2Headers(mdContent.toString())
   />
   <div data-md-content set:html={mdContent} />
   <AsideMenuLayout
-    active={tema.replace(/-/g, ' ')}
-    temas={temas.map((tema) => ({
-      href: `/materias/${materia}/${tema}`,
-      value: tema.replace(/-/g, ' ')
+    temas={temas.map((t) => ({
+      href: `/materias/${materia}/${t}`,
+      value: t.replace(/-/g, ' '),
+      active: t === tema
     }))}
-    ejercicios={ejercicios.map((ejercicio) => ({
-      href: `/materias/${materia}/${tema}/${ejercicio}`,
-      value: ejercicio.replace(/-/g, ' ')
+    ejercicios={ejercicios.map((ej) => ({
+      href: `/materias/${materia}/${tema}/${ej}`,
+      value: ej.replace(/-/g, ' '),
+      active: false
     }))}
     headers={headers}
   />

@@ -36,7 +36,10 @@ try {
     class='flex divide-x divide-border [&>*:first-child]:pr-2 [&>*:last-child]:pl-2'
   >
     <BreadcrumbLink href={`/materias`} value='materias' />
-    <span class='capitalize' transition:name={`materia-${materia}`}>
+    <span
+      class='py-2 text-sm capitalize'
+      transition:name={`materia-${materia}`}
+    >
       {materia.replace(/-/g, ' ')}
     </span>
   </header>
