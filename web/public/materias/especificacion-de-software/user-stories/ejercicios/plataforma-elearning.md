@@ -37,10 +37,83 @@ examen, redondeado al entero más cercano que corresponda a una calificación.
 Es importante que las calificaciones puedan exportarse en formato CSV, Excel y PDF. Sabemos que nos pueden solicitar
 más formatos posibles de exportación, el diseño debe soportar esto.
 
-> [!TIP]
-> Probando github md blockquotes.
+Identificar las user stories de tipo [Epic](https://ungs-archive.netlify.app/materias/especificacion-de-software/user-stories).
+A continuación, descomponer cada Epic en Features. Para cada una de las features, elaborar su correspondiente card, en el formato visto en clase.
 
-Identificar las user stories de tipo `Epic`[^1]. A continuación, descomponer cada Epic en Features. Para cada una de
-las features, elaborar su correspondiente card, en el formato visto en clase.
+## Posibles user stories
 
-[^1]: User stories que por lo general toman uno o mas meses para poder ser completamante desarrolladas.
+> E1: Soporte plataforma de e learning
+
+
+> F1: Crear usuarios
+> 
+> Como administrador quiero crear nuevos usuarios para docentes y estudiantes.
+> 
+> CA:
+> 1. se suministrará un nombre de usuario y contraseña para cada persona.
+> 2. el nombre de usuario será una dirección de correo electrónico.
+
+> F2: Crear Cursos
+>
+> Como administrador quiero poder crear cursos
+>
+> CA:
+> 1. Cada curso tendrá un nombre.
+
+> F3: Loguear en la web
+>
+> Como usuario quiero loguearme en la aplicación web
+>
+> CA:
+> 1. Se pedirá usuario, password.
+
+
+> F4: Asignar cursos
+>
+> Como administrador quiero asignar docentes y estudiantes a cursos
+>
+> CA:
+> 1. Solo docentes/estudiantes autorizados podrán ingresar a los cursos correspondientes
+
+
+> F5: Gestionar Curso
+> 
+> Como docente quiero poder gestionar los cursos que tenga a cargo
+>
+> CA:
+> 1. Puede haber más de un docente dentro de un curso pero solo uno estará a cargo del curso
+
+ 
+> F6: Determinar duración de curso
+>
+> Como docente quiero determinar la duración del curso
+> 
+> CA:
+> 1. la duración será en semanas
+> 2. Señalar una fecha de inicio
+
+> F7: Crear Contenidos
+> 
+> Como docente quiero crear contenidos para el curso
+> CA:
+> 1. Por cada semana habrá un contenido
+> 2. Un contenido tiene un título, puede tener un link a un documento dentro del sistema, a un recurso externo o un texto
+> 3. si el link es un texto, cuando se crea se debe especificar el texto a mostrar
+
+> F8: Almacenamiento de archivos
+> 
+> Como sistema quiero administrar archivos dentro de la plataforma (subir, reemplazar, eliminar)
+
+
+> F9: Visualización de contenido
+>
+> Como docente quiero configurar la visualización del contenido por semana
+ 
+
+> F10: publicar novedades
+>
+> Como docente quiero publicar novedades asociadas a un curso
+>
+> CA:
+> 1. Cada novedad tendrá un título, una descripción y una fecha
+> 2. la Novedad será mostrada en un lugar visible dentro de la pantalla principal del sistema
