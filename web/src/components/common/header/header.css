@@ -43,52 +43,6 @@
   }
 }
 
-/* html:has(#mobile-menu:checked) .hamburguer-menu {
-  background-color: rgba(0, 0, 0, 0.2);
-  position: absolute;
-  inset: 0;
-  } */
-
-#nav {
-  right: 0;
-  width: 100vw;
-  background-color: rgba(0, 0, 0, 0.2);
-  transition:
-    opacity 200ms,
-    display 500ms allow-discrete;
-  opacity: 0;
-  padding: 0;
-  margin: 0;
-  /* display: flex;
-  justify-content: end; */
-}
-
-#nav:popover-open {
-  opacity: 1;
-}
-
-/* Prevent scroll when popover is open */
-html:has(#nav:popover-open) {
-  overflow: hidden;
-}
-
-@starting-style {
-  #nav:popover-open {
-    opacity: 0;
-  }
-}
-
-.hamburguer-menu-overlay > div {
-  display: flex;
-  justify-content: end;
-}
-
-.hamburguer-menu-overlay section {
-  height: 100dvh;
-  background-color: var(--header-background);
-  width: 80%;
-  border-left: 1px solid rgba(0, 0, 0, 0.5);
-}
-
-/* #nav:popover-open > .hamburguer-menu > section {
-} */
+/* 
+  MOBILE MENU
+*/

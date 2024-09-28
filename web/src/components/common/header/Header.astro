@@ -5,6 +5,7 @@ import BlurSwitcher from './BlurSwitcher.astro'
 import './header.css'
 import ThemeSwitcher from './ThemeSwitcher.astro'
 import HamburguerMiniIcon from '@component/icons/HamburguerMiniIcon.astro'
+import MobileHeader from './MobileHeader.astro'
 ---
 
 <header class='header fixed left-0 top-0 z-50 w-full border-b px-6'>
@@ -22,7 +23,7 @@ import HamburguerMiniIcon from '@component/icons/HamburguerMiniIcon.astro'
         <span class='block text-xs'>Santiago Zarate </span>
       </div>
     </a>
-    <section class='mobile:flex hidden items-center gap-8'>
+    <section class='hidden items-center gap-8 mobile:flex'>
       <nav class='flex gap-4'>
         <a
           class='text-sm font-light uppercase opacity-50 transition-opacity hover:opacity-100'
@@ -36,39 +37,6 @@ import HamburguerMiniIcon from '@component/icons/HamburguerMiniIcon.astro'
       <ThemeSwitcher />
       <BlurSwitcher />
     </section>
-    <section class='mobile:hidden flex'>
-      <button
-        popovertarget='nav'
-        class='rounded-md border border-border p-2 text-border transition-colors hover:bg-accent'
-        ><HamburguerMiniIcon /></button
-      >
-      <nav popover id='nav' class='hamburguer-menu-overlay'>
-        <div>
-          <section class='flex flex-col gap-8 p-4'>
-            <header class='flex justify-end'>
-              <button
-                popovertarget='nav'
-                class='rounded-md border border-border p-2 text-border transition-colors hover:bg-accent'
-                ><XMarkMiniIcon /></button
-              >
-            </header>
-            <ul class='flex flex-col gap-4'>
-              <a
-                class='text-sm font-light uppercase opacity-50 transition-opacity hover:opacity-100'
-                href='/materias'>materias</a
-              >
-              <a
-                class='text-sm font-light uppercase opacity-50 transition-opacity hover:opacity-100'
-                href='materias'>Parciales</a
-              >
-            </ul>
-            <ul class='flex gap-4'>
-              <ThemeSwitcher />
-              <BlurSwitcher />
-            </ul>
-          </section>
-        </div>
-      </nav>
-    </section>
+    <MobileHeader />
   </div>
 </header>
