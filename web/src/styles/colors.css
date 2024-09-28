@@ -1,6 +1,17 @@
+@property --tint-color {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 190;
+}
+
+@property --background-intensity {
+  syntax: '<percentage>';
+  inherits: true;
+  initial-value: 10%;
+}
+
 :root {
-  --tint-color: 190;
-  --background: var(--tint-color) 10% 75%;
+  --background: var(--tint-color) var(--background-intensity) 75%;
   --background-foreground: var(--tint-color) 80% 3%;
   --secondary: var(--tint-color) 10% 85%;
   --accent: var(--tint-color) 25% 85%;
@@ -15,4 +26,17 @@
   --accent: var(--tint-color) 25% 10%;
   --primary: var(--tint-color) 10% 95%;
   --border: var(--tint-color) 10% 50%;
+}
+
+html {
+  animation: changeTintColor linear both;
+  animation-range: 80% 100%;
+  animation-timeline: scroll();
+}
+
+@keyframes changeTintColor {
+  to {
+    --tint-color: 120;
+    --background-intensity: 30%;
+  }
 }

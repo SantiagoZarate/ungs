@@ -1,6 +1,6 @@
 :root {
-  --header-background: hsl(190deg, 10%, 75%);
-  --header-accent: hsl(190deg, 25%, 85%);
+  --header-background: hsl(var(--tint-color), var(--background-intensity), 75%);
+  --header-accent: hsl(var(--tint-color), 25%, 85%);
 }
 
 .dark {
@@ -16,8 +16,11 @@
   background-color: var(--header-background);
 }
 
-#blur-effect:checked ~ label {
-  background-color: var(--header-accent);
+@supports (backdrop-filter: blur()) {
+  #blur-effect:checked ~ label {
+    display: block;
+    background-color: var(--header-accent);
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {

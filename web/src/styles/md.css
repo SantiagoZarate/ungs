@@ -1,5 +1,11 @@
 :root {
-  --md-accent: hsl(190deg, 25%, 85%);
+  --accent-saturation-level: 25%;
+  --accent-lightness-level: 85%;
+  --md-accent: hsl(
+    190deg,
+    var(--accent-saturation-level),
+    var(--accent-lightness-level)
+  );
   --md-secondary: hsl(190deg, 10%, 85%);
   --md-card: hsl(190deg, 10%, 65%);
   --md-card-foreground: hsl(190deg, 10%, 25%);
@@ -54,6 +60,30 @@
   padding-block: 0.5em;
   border-inline-start-color: var(--md-accent);
   border-radius: 0 0.5em 0.5em 0;
+}
+
+[data-md-content] blockquote li:hover {
+  background-color: inherit;
+}
+
+[data-md-content] > blockquote > blockquote {
+  border-inline-start-color: hsl(
+    190deg,
+    calc(var(--accent-saturation-level) + 20%),
+    calc(var(--accent-lightness-level) - 20%)
+  );
+}
+
+[data-md-content] > blockquote > blockquote > blockquote {
+  border-inline-start-color: hsl(
+    190deg,
+    calc(var(--accent-saturation-level) + 40%),
+    calc(var(--accent-lightness-level) - 40%)
+  );
+}
+
+[data-md-content] blockquote li {
+  font-weight: 300;
 }
 
 [data-md-content] blockquote > :first-child {
