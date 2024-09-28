@@ -18,7 +18,8 @@ export default {
         geist: ['Geist', 'sans-serif']
       },
       screens: {
-        tablet: '805px'
+        tablet: '805px',
+        mobile: '430px'
       }
     }
   },
