@@ -2,19 +2,19 @@
   --accent-saturation-level: 25%;
   --accent-lightness-level: 85%;
   --md-accent: hsl(
-    190deg,
+    var(--tint-color),
     var(--accent-saturation-level),
     var(--accent-lightness-level)
   );
-  --md-secondary: hsl(190deg, 10%, 85%);
-  --md-card: hsl(190deg, 10%, 65%);
-  --md-card-foreground: hsl(190deg, 10%, 25%);
+  --md-secondary: hsl(var(--tint-color), 10%, 85%);
+  --md-card: hsl(var(--tint-color), 10%, 65%);
+  --md-card-foreground: hsl(var(--tint-color), 10%, 25%);
 }
 
 .dark {
-  --md-secondary: hsl(190deg, 10%, 25%);
-  --md-card: hsl(190deg, 10%, 35%);
-  --md-card-foreground: hsl(190deg, 10%, 85%);
+  --md-secondary: hsl(var(--tint-color), 10%, 25%);
+  --md-card: hsl(var(--tint-color), 10%, 35%);
+  --md-card-foreground: hsl(var(--tint-color), 10%, 85%);
 }
 
 [data-md-content] img {

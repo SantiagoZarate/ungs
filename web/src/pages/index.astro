@@ -1,9 +1,32 @@
 ---
 import Layout from '@layout/Layout.astro'
+import '../styles/hero.css'
 ---
 
 <Layout title='UNGS Archive - Santiago Zarate'>
-  <header>UNGS BLOG</header>
+  <article class='hero-section relative'>
+    <div data-border></div>
+    <div data-border></div>
+    <div data-border></div>
+    <div data-border></div>
+    <div class="dot-background"
+    >
+    </div>
+    <section class='hero grid grid-rows-[12em,7.5em]'>
+      <div class='flex items-center justify-center text-[12em]'>UNGS</div>
+      <div class='flex items-center justify-center text-[7.5em] uppercase'>
+        archive
+      </div>
+    </section>
+    <!-- <section
+      class='hero-invert absolute top-0 grid w-full grid-rows-[12em,7.5em]'
+    >
+      <div class='flex items-center justify-center text-[12em]'>UNGS</div>
+      <div class='flex items-center justify-center text-[7.5em] uppercase'>
+        archive
+      </div>
+    </section> -->
+  </article>
   <section>
     <p class='text-justify'>
       Bienvenidos a mi blog, donde compartiré temas y ejercicios relacionados

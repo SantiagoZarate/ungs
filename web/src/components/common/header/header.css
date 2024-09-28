@@ -4,7 +4,7 @@
 }
 
 .dark {
-  --header-background: hsl(190deg, 80%, 3%);
+  --header-background: hsl(var(--tint-color), 80%, 3%);
 }
 
 .header {
