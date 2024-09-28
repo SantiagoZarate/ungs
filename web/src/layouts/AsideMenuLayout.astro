@@ -1,6 +1,9 @@
 ---
+import BookMiniIcon from '@component/icons/BookMiniIcon.astro'
 import RigthArrowMicroIcon from '../components/icons/RigthArrowMicroIcon.astro'
 import HoverableIcon from '../components/ui/HoverableIcon.astro'
+import MobileAsideMenu from './MobileAsideMenu.astro'
+import PencilMiniIcon from '@component/icons/PencilMiniIcon.astro'
 
 interface Props {
   temas: { value: string; href: string; active: boolean }[]
@@ -75,6 +78,55 @@ const { ejercicios, temas, headers = [] } = Astro.props
     </ul>
   </section>
 </aside>
+
+<MobileAsideMenu>
+  {
+    headers.length > 0 ? (
+      <section>
+        <p class='flex items-center gap-2 px-4 font-bold capitalize text-primary'>
+          <span class='rounded-md border border-border p-1'>
+            <BookMiniIcon />
+          </span>
+          temas
+        </p>
+        <nav class='flex flex-col [&>:last-child]:border-b'>
+          {headers?.map((header) => (
+            <button
+              data-go-to-header
+              popovertarget='drawer-menu'
+              class={`group flex w-full items-center gap-2 border border-b-0 border-l-0 border-r-0 border-dashed border-border p-2 px-4 text-sm capitalize text-primary no-underline transition-colors hover:bg-secondary`}
+            >
+              {header}
+            </button>
+          ))}
+        </nav>
+      </section>
+    ) : null
+  }
+  <section>
+    <p class='flex items-center gap-2 px-4 font-bold capitalize text-primary'>
+      <span class='rounded-md border border-border p-1'>
+        <PencilMiniIcon />
+      </span>
+      ejericios
+    </p>
+    <nav class='flex flex-col [&>:last-child]:border-b'>
+      {
+        ejercicios.map((ejercicio) => (
+          <a
+            href={ejercicio.href}
+            class={`group flex w-full items-center gap-2 p-2 px-4 text-sm capitalize no-underline transition-colors hover:bg-secondary ${ejercicio.active ? 'bg-accent' : 'border border-b-0 border-l-0 border-r-0 border-dashed border-border'}`}
+          >
+            {ejercicio.value}
+            <HoverableIcon>
+              <RigthArrowMicroIcon />
+            </HoverableIcon>
+          </a>
+        ))
+      }
+    </nav>
+  </section>
+</MobileAsideMenu>
 
 <script>
   document.addEventListener('astro:page-load', () => {

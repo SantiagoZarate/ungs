@@ -49,7 +49,12 @@
 }
 
 [data-md-content] pre {
-  max-width: 805px;
+  display: grid;
+  grid-template-columns: minmax(100px, 1fr);
+}
+
+[data-md-content] pre code {
+  text-wrap: wrap;
 }
 
 [data-md-content] blockquote {

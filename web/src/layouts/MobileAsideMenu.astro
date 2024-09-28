@@ -1,0 +1,23 @@
+---
+import QueueListMiniIcon from '@component/icons/QueueListMiniIcon.astro'
+import './mobile-aside-menu.css'
+---
+
+<button
+  class='fixed bottom-0 left-0 z-50 m-4 block rounded-md border border-border bg-background p-2 text-border transition-colors hover:bg-accent xl:hidden'
+  popovertarget='drawer-menu'><QueueListMiniIcon /></button
+>
+<nav popover id='drawer-menu' class='w-full bg-black/50'>
+  <div>
+    <section class='drawer flex flex-col gap-4'>
+      <header>
+        <button
+          popovertarget='drawer-menu'
+          class='w-full p-2 text-center uppercase text-primary transition hover:bg-secondary'
+          >cerrar</button
+        >
+        <slot />
+      </header>
+    </section>
+  </div>
+</nav>

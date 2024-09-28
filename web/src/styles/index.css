@@ -5,3 +5,8 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Prevent scroll when popover is open */
+html:has(nav:popover-open) {
+  overflow: hidden;
+}

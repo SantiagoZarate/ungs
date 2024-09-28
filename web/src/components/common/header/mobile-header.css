@@ -14,11 +14,6 @@
   opacity: 1;
 }
 
-/* Prevent scroll when popover is open */
-html:has(#nav:popover-open) {
-  overflow: hidden;
-}
-
 @starting-style {
   #nav:popover-open {
     opacity: 0;
