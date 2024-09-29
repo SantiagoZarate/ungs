@@ -1,46 +1,11 @@
 ---
-import UngsBigLogoIcon from '@component/icons/UngsBigLogoIcon.astro'
-import UNGSIcon from '@component/icons/UNGSIcon.astro'
 import Layout from '@layout/Layout.astro'
 import '../styles/hero.css'
-import ZARATEIcon from '@component/icons/ZARATEIcon.astro'
+import HeroSection from './HeroSection.astro'
 ---
 
 <Layout title='UNGS Archive - Santiago Zarate'>
-  <article class='hero-section relative'>
-    <div data-border></div>
-    <div data-border></div>
-    <div data-border></div>
-    <div data-border></div>
-    <div class='dot-background'></div>
-    <section class='group flex flex-wrap gap-4 p-2'>
-      <div class='aspect-square rounded-3xl bg-black text-background'>
-        <UngsBigLogoIcon />
-      </div>
-      <section class='hero grid flex-1'>
-        <span
-          class='flex w-full items-center justify-center group-hover:hidden'
-        >
-          <UNGSIcon />
-        </span>
-        <span
-          class='hidden w-full items-center justify-center group-hover:flex'
-        >
-          <ZARATEIcon />
-        </span>
-        <!-- <div class='flex items-center justify-center'>UNGS</div>
-        <div class='flex items-center justify-center'>ARCHIVE</div> -->
-      </section>
-    </section>
-    <!-- <section
-      class='hero-invert absolute top-0 grid w-full grid-rows-[12em,7.5em]'
-    >
-      <div class='flex items-center justify-center text-[12em]'>UNGS</div>
-      <div class='flex items-center justify-center text-[7.5em] uppercase'>
-        archive
-      </div>
-    </section> -->
-  </article>
+  <HeroSection />
   <section>
     <p class='text-justify'>
       Bienvenidos a mi blog, donde compartiré temas y ejercicios relacionados

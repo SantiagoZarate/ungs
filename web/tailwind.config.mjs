@@ -15,7 +15,8 @@ export default {
         border: 'hsl(var(--border))'
       },
       fontFamily: {
-        geist: ['Geist', 'sans-serif']
+        geist: ['Geist', 'sans-serif'],
+        editorial: ['PPEditorial', 'sans-serif']
       },
       screens: {
         tablet: '805px',

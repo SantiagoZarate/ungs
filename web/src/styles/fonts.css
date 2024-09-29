@@ -1,4 +1,18 @@
 @font-face {
+  font-family: 'PPEditorial';
+  src: url('/fonts/PPEditorialNew-Regular.ttf') format('ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PPEditorial';
+  src: url('/fonts/PPEditorialNew-Ultralight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Geist';
   src: url('./fonts/Geist-Regular.ttf') format('ttf');
   font-weight: 400;

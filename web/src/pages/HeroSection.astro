@@ -1,0 +1,61 @@
+---
+import UngsBigLogoIcon from '@component/icons/UngsBigLogoIcon.astro'
+import UNGSIcon from '@component/icons/UNGSIcon.astro'
+import ZARATEIcon from '@component/icons/ZARATEIcon.astro'
+---
+
+<article class='hero-section relative flex flex-wrap gap-4 p-2'>
+  <div
+    class='z-10 aspect-square rounded-3xl bg-background-foreground text-background'
+  >
+    <UngsBigLogoIcon />
+  </div>
+  <section class='hero relative grid flex-1'>
+    <div data-border></div>
+    <div data-border></div>
+    <div data-border></div>
+    <div data-border></div>
+    <div data-divider class='absolute top-0 z-10 h-2 w-full bg-accent'></div>
+    <span data-ungs class='flex w-full items-center justify-center p-4'>
+      <UNGSIcon />
+    </span>
+    <span
+      data-zarate
+      class='absolute flex h-full w-full items-center justify-center p-4'
+    >
+      <div class='dot-background -z-10'></div>
+      <div
+        class='absolute inset-0 -z-10 bg-gradient-to-t from-accent to-transparent'
+      >
+      </div>
+      <ZARATEIcon />
+    </span>
+  </section>
+</article>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const $hero = document.querySelector('.hero')!
+    const $UNGS = document.querySelector('[data-ungs]')!
+    const $ZARATE = document.querySelector('[data-zarate]')!
+    const $DIVIDER = document.querySelector('[data-divider]')!
+    const rect = $hero.getBoundingClientRect()
+
+    const updateClipPaths = (event: Event) => {
+      // @ts-ignore
+      const relativeY = event.clientY - rect.top
+      const percentY = (relativeY / rect.height) * 100
+
+      // @ts-ignore
+      $UNGS.style.clipPath = `inset(${percentY}% 0 0 0)`
+      // @ts-ignore
+      $ZARATE.style.clipPath = `inset(0 0 ${100 - percentY}% 0)`
+      // @ts-ignore
+      $DIVIDER.style.top = `${percentY - 2}%`
+    }
+
+    $hero.addEventListener('mousemove', (event) => {
+      updateClipPaths(event)
+    })
+  })
+</script>

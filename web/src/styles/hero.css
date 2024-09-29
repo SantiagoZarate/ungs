@@ -10,18 +10,14 @@
   initial-value: 0%;
 }
 
-.hero-section {
-  background-color: var(--md-card);
-}
-
-.hero-section > div[data-border] {
+div[data-border] {
   border: 2px solid var(--md-accent);
   width: 1em;
   height: 1em;
   position: absolute;
 }
 
-.hero-section > .dot-background {
+.dot-background {
   position: absolute;
   inset: 0;
   background-image: radial-gradient(var(--md-accent) 1px, transparent 1px);
@@ -38,33 +34,28 @@
   );
 }
 
-.hero-section > div:nth-child(1) {
+div[data-border]:nth-child(1) {
   border-right: 0;
   border-bottom: 0;
 }
 
-.hero-section > div:nth-child(2) {
+div[data-border]:nth-child(2) {
   border-left: 0;
   border-bottom: 0;
   right: 0;
 }
 
-.hero-section > div:nth-child(3) {
+div[data-border]:nth-child(3) {
   border-top: 0;
   border-left: 0;
   right: 0;
   bottom: 0;
 }
 
-.hero-section > div:nth-child(4) {
+div[data-border]:nth-child(4) {
   border-top: 0;
   border-right: 0;
   bottom: 0;
-}
-
-.hero {
-  clip-path: inset(var(--clip-path-top) 0 0 0);
-  /* animation: updateClipPath 2s infinite alternate-reverse; */
 }
 
 .hero-invert div {
@@ -73,14 +64,8 @@
   position: relative;
 }
 
-.hero > :first-child {
-  /* display: flex;
-  align-items: center; */
-}
-
 .hero > :last-child {
-  /* display: flex;
-  align-items: start; */
+  clip-path: inset(0 0 100% 0);
 }
 
 @keyframes updateClipPath {

@@ -79,7 +79,12 @@ const headers = getH2Headers(mdContent.toString())
     ]}
     activeSlug={tema.replace(/-/g, ' ')}
   />
-  <div data-md-content set:html={mdContent} />
+
+  <div
+    data-md-content
+    set:html={mdContent}
+    class='[&>:first-child]:font-editorial [&>:first-child]:font-extralight'
+  />
   <AsideMenuLayout
     temas={temas.map((t) => ({
       href: `/materias/${materia}/${t}`,
