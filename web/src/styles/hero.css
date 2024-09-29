@@ -73,6 +73,16 @@
   position: relative;
 }
 
+.hero > :first-child {
+  /* display: flex;
+  align-items: center; */
+}
+
+.hero > :last-child {
+  /* display: flex;
+  align-items: start; */
+}
+
 @keyframes updateClipPath {
   to {
     --clip-path-top: 100%;
