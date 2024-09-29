@@ -35,7 +35,7 @@
 }
 
 [data-md-content] li::marker {
-  color: var(--md-accent);
+  color: var(--md-card-foreground);
 }
 
 [data-md-content] li {
