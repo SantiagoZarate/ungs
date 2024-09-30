@@ -8,16 +8,19 @@ import './mobile-aside-menu.css'
   popovertarget='drawer-menu'><QueueListMiniIcon /></button
 >
 <nav popover id='drawer-menu' class='w-full bg-black/50'>
-  <div>
-    <section class='drawer flex flex-col gap-4'>
-      <header>
-        <button
-          popovertarget='drawer-menu'
-          class='w-full p-2 text-center uppercase text-primary transition hover:bg-secondary'
-          >cerrar</button
-        >
-        <slot />
-      </header>
-    </section>
-  </div>
+  <button
+    popovertarget='drawer-menu'
+    class='drawer-closer absolute inset-0 bg-transparent'
+  >
+  </button>
+  <section class='drawer flex flex-col gap-4'>
+    <header>
+      <button
+        popovertarget='drawer-menu'
+        class='w-full p-2 text-center uppercase text-primary transition hover:bg-secondary'
+        >cerrar</button
+      >
+      <slot />
+    </header>
+  </section>
 </nav>

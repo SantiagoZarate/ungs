@@ -5,6 +5,10 @@
     display 500ms allow-discrete;
   padding: 0;
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  height: 100dvh;
 }
 
 #drawer-menu:popover-open {
@@ -15,13 +19,6 @@
   #drawer-menu:popover-open {
     opacity: 0;
   }
-}
-
-#drawer-menu div {
-  display: flex;
-  align-items: end;
-  justify-content: center;
-  height: 100dvh;
 }
 
 #drawer-menu .drawer {
@@ -42,4 +39,12 @@
   #drawer-menu:popover-open .drawer {
     transform: translateY(100%);
   }
+}
+
+.drawer-closer {
+  display: none;
+}
+
+#drawer-menu:popover-open .drawer-closer {
+  display: block;
 }
