@@ -2,6 +2,16 @@ html:has(#blur-effect:checked) [data-blurred-mask] {
   opacity: 0;
 }
 
+.temas-aside {
+  transition: opacity 300ms;
+}
+
+html:has(#zen-mode:checked) .temas-aside {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: scroll()) {
     .temas-aside > :first-child {

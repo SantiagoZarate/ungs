@@ -28,7 +28,7 @@
   --border: var(--tint-color) 10% 50%;
 }
 
-html {
+/* html {
   animation: changeTintColor linear both;
   animation-range: 80% 100%;
   animation-timeline: scroll();
@@ -39,4 +39,4 @@ html {
     --tint-color: 120;
     --background-intensity: 30%;
   }
-}
+} */

@@ -14,6 +14,13 @@ interface Props {
 const { ejercicios, temas, headers = [] } = Astro.props
 ---
 
+<input id='zen-mode' type='checkbox' hidden />
+<label
+  for='zen-mode'
+  class='fixed bottom-0 left-0 z-40 m-24 hidden cursor-pointer rounded-full bg-secondary p-2 transition hover:-translate-y-1 active:bg-accent xl:inline-block'
+>
+  zen
+</label>
 <aside
   class='temas-aside pointer-events-none fixed left-0 hidden h-full w-full grid-cols-[1fr_805px_1fr] xl:grid'
 >

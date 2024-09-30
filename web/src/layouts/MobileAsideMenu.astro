@@ -13,14 +13,16 @@ import './mobile-aside-menu.css'
     class='drawer-closer absolute inset-0 bg-transparent'
   >
   </button>
-  <section class='drawer flex flex-col gap-4'>
-    <header>
-      <button
-        popovertarget='drawer-menu'
-        class='w-full p-2 text-center uppercase text-primary transition hover:bg-secondary'
-        >cerrar</button
-      >
-      <slot />
-    </header>
-  </section>
+  <div>
+    <section class='drawer flex flex-col gap-4'>
+      <header>
+        <button
+          popovertarget='drawer-menu'
+          class='w-full p-2 text-center uppercase text-primary transition hover:bg-secondary'
+          >cerrar</button
+        >
+        <slot />
+      </header>
+    </section>
+  </div>
 </nav>
