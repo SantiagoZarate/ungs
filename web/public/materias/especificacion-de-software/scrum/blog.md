@@ -99,3 +99,24 @@ Los elementos de la Lista de Producto tienen como atributos la descripción, el 
 
 Elementos de la Lista de Producto seleccionados para el Sprint, más un plan para entregar el Incremento de producto y conseguir el Objetivo del Sprint.
 Cuando algún elemento del plan se considera innecesario, es eliminado. Solo el Equipo de Desarrollo puede cambiar su Lista de Pendientes del Sprint durante un Sprint.
+
+
+## Transparencia de los Artefactos
+
+Scrum se basa en la transparencia para tomar decisiones informadas y controlar riesgos. Las decisiones para maximizar el valor y gestionar riesgos dependen del estado visible de los artefactos. Si los artefactos no son completamente transparentes, las decisiones pueden ser incorrectas, lo que podría reducir el valor y aumentar el riesgo.
+
+El Scrum Master debe colaborar con el Product Owner, el Equipo de Desarrollo y otras partes interesadas para asegurar que los artefactos sean totalmente transparentes. Si hay falta de transparencia, el Scrum Master debe implementar prácticas adecuadas para mejorarla. Esto implica inspeccionar artefactos, identificar patrones y diferencias entre los resultados esperados y los reales.
+
+El rol del Scrum Master es trabajar con el Equipo Scrum y la organización para mejorar la transparencia, lo cual es un proceso gradual que requiere aprendizaje, convicción y cambio.
+
+
+## Definición de Terminado.
+
+La Definición de "Terminado" (Definition of “Done”) establece qué significa que un elemento del Product Backlog o un incremento esté completamente terminado. Esta definición debe ser comprendida y acordada por todos los miembros del Equipo Scrum para garantizar transparencia y claridad.
+
+Cada Equipo Scrum tiene su propia Definición de "Terminado", que se usa para evaluar si el trabajo en un incremento de producto está completo. Esta definición también ayuda al Equipo de Desarrollo a decidir cuántos elementos del Product Backlog pueden abordar durante el Sprint Planning.
+
+Un incremento entregado en un Sprint debe ser potencialmente liberable y cumplir con la Definición de "Terminado".
+Cada incremento debe integrarse con los anteriores y ser probado exhaustivamente para asegurar que todos funcionen en conjunto. A medida que los equipos se vuelven más maduros, se espera que su definición de "Terminado" se vuelva más rigurosa, lo que podría revelar trabajo adicional necesario en incrementos previamente completados.
+La definición de "Terminado" debe ser un estándar para cualquier trabajo realizado en el producto o sistema.
+
