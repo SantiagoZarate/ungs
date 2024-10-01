@@ -24,6 +24,9 @@ En UML, el estado de un objeto se presenta con un rectángulo de esquinas bordea
 Una transición es una **relación entre 2 estados**.
 Una transición indica que un objeto en estado A, ejecutará ciertas acciones y pasará al estado B cuando el evento asociado a la transición ocurra.
 
+![image](https://github.com/user-attachments/assets/1344cccc-38f8-4799-9d40-f5fb6c61465d)
+
+
 En el siguiente ejemplo, se muestra el diagrama de estados de un molinete (de un subte por ejemplo).
 
 ![screenshot_30-sep-2024_16-32-57](https://github.com/user-attachments/assets/c596212e-252d-492c-aae7-d6575ce52872)
