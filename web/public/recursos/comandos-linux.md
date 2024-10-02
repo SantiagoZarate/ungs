@@ -8,8 +8,12 @@ visualiza todos los procesos activos del sistema (necesita instalarse)
 > htop
 
 **Service**
-Lista todos los servicios, activos e inactivos del sistema
->service --status-all
+interactua con todos los servicios, activos e inactivos del sistema
+> service --status-all
+> > Listar servicios
+
+> service postgresql restart
+> > Reiniciar servicio
 
 **Find**
 Busca algun archivo / directorio en el equipo
