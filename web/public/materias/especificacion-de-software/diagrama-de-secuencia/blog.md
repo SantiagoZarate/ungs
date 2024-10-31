@@ -55,3 +55,44 @@ En el siguiente caso, cuando se pone la activación, lo que se está diciendo es
 
 ![image](https://github.com/user-attachments/assets/6875fd74-3eed-44d2-b417-9fb83d45c312)
 
+## Ejemplos
+
+Los objetos y actores que intervienen se mencionan a lo largo de la parte superior del
+diagrama, con una línea punteada que se dibuja verticalmente a partir de éstos. Las interacciones entre los objetos se indican con flechas dirigidas. El rectángulo sobre las líneas
+punteadas indica la línea de vida del objeto tratado (es decir, el tiempo que la instancia
+del objeto está involucrada en la computación). La secuencia de interacciones se lee de
+arriba abajo. Las anotaciones sobre las flechas señalan las llamadas a los objetos, sus
+parámetros y los valores que regresan.
+
+**Diagrama de secuencia para “ver información del paciente”**
+
+![screenshot_31-oct-2024_12-13-03](https://github.com/user-attachments/assets/b86cb4cb-1dc3-452d-833d-ea9f1c1b9c0d)
+
+1. El recepcionista médico activa el método ViewInfo (ver información) en una instancia P de la clase de objeto PatientInfo, y suministra el identificador del paciente,
+PID. P es un objeto de interfaz de usuario, que se despliega como un formato que
+muestra la información del paciente.
+2. La instancia P llama a la base de datos para regresar la información requerida, y
+suministra el identificador del recepcionista para permitir la verificación de seguridad (en esta etapa no se preocupe de dónde proviene este UID).
+3. La base de datos comprueba, mediante un sistema de autorización, que el usuario
+esté autorizado para tal acción.
+4. Si está autorizado, se regresa la información del paciente y se llena un formato en la
+pantalla del usuario. Si la autorización falla, entonces se regresa un mensaje de error.
+
+**Diagrama de secuencia para transferir datos**
+
+Este ejemplo se trata de la comunicación directa entre los
+actores en el sistema y la creación de objetos como parte de una secuencia de operaciones. En este ejemplo, un objeto del tipo Summary (resumen) se crea para contener los
+datos del resumen que deben subirse al PRS (patient record system, es decir, el sistema
+de registro de paciente).
+
+![image](https://github.com/user-attachments/assets/62b7cd85-b56c-4eb1-ba9e-ce71faeee8d5)
+
+1. El recepcionista inicia sesión (log) en el PRS.
+2. Hay dos opciones disponibles. Las opciones permiten la transferencia directa de
+información actualizada del paciente al PRS, y la transferencia de datos del resumen
+de salud del MHC-PMS al PRS.
+3. En cada caso, se verifican los permisos del recepcionista usando el sistema de autorización.
+4. La información personal se transfiere directamente del objeto de interfaz del usuario
+al PRS. De manera alternativa, es posible crear un registro del resumen de la base de
+datos y, luego, transferir dicho registro.
+5. Al completar la transferencia, el PRS emite un mensaje de estatus y el usuario termina la sesión (log off).
