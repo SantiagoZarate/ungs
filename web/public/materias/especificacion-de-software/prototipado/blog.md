@@ -106,6 +106,9 @@ La primera fase del prototipado es el sketching o bocetado. Se trata de esas pri
 
 Nos da una primera impresión de forma ágil de la disposición de los elementos. Esas ideas que se van dando, por ejemplo, dentro de la reunión, y que de alguna manera hay que hacer físicas. Estamos hablando de utilizar el bosquejo a nuestro favor.
 
+![image](https://github.com/user-attachments/assets/f89ead63-44d9-4f1a-8c6c-c3be37f0c312)
+
+
 ### Fase 2: Wireframe
 
 **Wireframe de Baja Calidad (Low-fi, Nivel Layout)**: Representación de baja fidelidad de la interfaz del usuario, presentando de forma esquematizada los conceptos claves y el flujo de navegación.
@@ -134,7 +137,10 @@ las interacciones entre pantallas, las
 lógicas de uso, las historias y los casos
 del usuarios antes de añadir la interactividad
 
-## Fase 3: Prototipo no funcional
+![image](https://github.com/user-attachments/assets/4940493d-2c9e-4d96-a6ee-32a179b890e7)
+
+
+### Fase 3: Prototipo no funcional
 
 **Mockup (Hi-fi, Nivel Estilo)**: Representación estática de alta fidelidad con colores, tipografías, imágenes, etc., mostrando una apariencia visual cercana al producto final.
 
@@ -168,6 +174,9 @@ resumen, añadimos
 interacciones y se
 puede «mostrar» como
 una app o web real.
+
+![image](https://github.com/user-attachments/assets/494a6505-4b67-44a9-b6bd-3ef1abb4554f)
+
 
 ## Cuándo diseñar un prototipo de alta fidelidad
 
