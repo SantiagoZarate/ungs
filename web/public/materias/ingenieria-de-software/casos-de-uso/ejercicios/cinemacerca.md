@@ -1,5 +1,7 @@
 # Cinemacerca
 
+## Enunciado
+
 La cadena de cines CINEMACERCA quiere desarrollar un sistema de reservas y
 venta de entradas. La idea es incorporar un sistema para la promoción de las películas
 y los servicios de venta de comidas (Candy Bar).
@@ -84,4 +86,14 @@ Tener en cuenta que cada cine perteneciente a la cadena de cines
 CINEMACERCA, tiene su propia información de salas y capacidad disponibles, precio
 de las entradas según los días, etc.
 
+## Resolucion
+
+Diagrama de casos de uso:
+
 **[Diagrama](https://app.diagrams.net/#G1UifyQq6RtjPdA1hBLrTKS6chdx7hsSHG#%7B%22pageId%22%3A%225ic7H5diq4Vpwu0SgvJ7%22%7D)** 
+
+Modelo conceptual:
+
+[Incompleto]
+
+[Ir a draw.io](https://app.diagrams.net/#G1UifyQq6RtjPdA1hBLrTKS6chdx7hsSHG#%7B%22pageId%22%3A%225ic7H5diq4Vpwu0SgvJ7%22%7D)
