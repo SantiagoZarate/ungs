@@ -90,10 +90,12 @@ de las entradas según los días, etc.
 
 Diagrama de casos de uso:
 
-**[Diagrama](https://app.diagrams.net/#G1UifyQq6RtjPdA1hBLrTKS6chdx7hsSHG#%7B%22pageId%22%3A%225ic7H5diq4Vpwu0SgvJ7%22%7D)** 
+![ejercicios-inge-Cinemacerca](https://github.com/user-attachments/assets/6965caef-3ec4-4a4e-9c74-8b55636b7c3b)
+
 
 Modelo conceptual:
 
-[Incompleto]
+![image](https://github.com/user-attachments/assets/d8427f3b-b482-4aad-927a-4a08418edd97)
+
 
 [Ir a draw.io](https://app.diagrams.net/#G1UifyQq6RtjPdA1hBLrTKS6chdx7hsSHG#%7B%22pageId%22%3A%225ic7H5diq4Vpwu0SgvJ7%22%7D)
